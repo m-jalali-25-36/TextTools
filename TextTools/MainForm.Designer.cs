@@ -287,6 +287,7 @@
             this.cbOperation.Name = "cbOperation";
             this.cbOperation.Size = new System.Drawing.Size(198, 23);
             this.cbOperation.TabIndex = 0;
+            this.cbOperation.SelectedIndexChanged += new System.EventHandler(this.cbOperation_SelectedIndexChanged);
             // 
             // btnStart
             // 

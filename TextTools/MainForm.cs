@@ -98,6 +98,11 @@ namespace TextTools
             tbxOutput.Text = tbxInpute.Text;
         }
 
+        private void cbOperation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbAuto.Checked)
+                btnStart_Click(sender, e);
+        }
         private void tbxInpute_TextChanged(object sender, EventArgs e)
         {
             if (cbAuto.Checked)
@@ -113,5 +118,6 @@ namespace TextTools
         {
             Clipboard.SetText(tbxOutput.Text);
         }
+
     }
 }
