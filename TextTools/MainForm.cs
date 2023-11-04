@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace TextTools
 {
@@ -14,6 +15,9 @@ namespace TextTools
                 cbOperation.Items.Add(operationList[i].TitleCaseWithSpace());
             }
             cbOperation.SelectedIndex = 1;
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -50,6 +54,7 @@ namespace TextTools
                     tbxOutput.Text = tbxInpute.Text.RemoveExtraSpaces();
                     break;
                 case OperationEnum.ReplaceText:
+                    replaceOperation();
                     break;
                 case OperationEnum.SplitText:
                     break;
@@ -78,6 +83,66 @@ namespace TextTools
             }
         }
 
+        private void replaceOperation(string arg = "All")
+        {
+            StringComparison opsStr = StringComparison.InvariantCultureIgnoreCase;
+            RegexOptions opsReg = RegexOptions.IgnoreCase;
+            if (cbxPRCaseSensitive.Checked)
+            {
+                opsStr = StringComparison.CurrentCulture;
+                opsReg = RegexOptions.None;
+            }
+            string replaceWith = tbxPRReplaceWith.Text;
+            string inputText = tbxInpute.Text;
+            if (cbxPRUseRegexp.Checked)
+                replaceWith = replaceWith.Replace("\\n", "\r\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+            if (arg == "Next" || cbPRReplacementNumber.Checked)
+            {
+                int rep = 0;
+                do
+                {
+                    if (!cbxPRUseRegexp.Checked)
+                    {
+                        var index = inputText.IndexOf(tbxPRFindWhat.Text, opsStr);
+                        if (index >= 0)
+                        {
+                            inputText = inputText
+                               .Substring(0, index + tbxPRFindWhat.Text.Length)
+                               .Replace(tbxPRFindWhat.Text, replaceWith, opsStr)
+                               + inputText
+                               .Substring(index + tbxPRFindWhat.Text.Length);
+                        }
+                    }
+                    else
+                    {
+                        var math = Regex.Match(inputText, tbxPRFindWhat.Text, opsReg);
+                        if (math.Success)
+                        {
+                            inputText = Regex.Replace(
+                                inputText.Substring(0, math.Index + math.Length),
+                                tbxPRFindWhat.Text,
+                                replaceWith,
+                                opsReg)
+                                + inputText.Substring(math.Index + math.Length);
+                        }
+                    }
+                    rep++;
+                } while (cbPRReplacementNumber.Checked && rep < nuPRReplacementNumber.Value);
+                tbxOutput.Text = inputText;
+            }
+            else
+            {
+                if (!cbxPRUseRegexp.Checked)
+                {
+                    tbxOutput.Text = inputText.Replace(tbxPRFindWhat.Text, replaceWith, opsStr);
+                }
+                else
+                {
+                    tbxOutput.Text = Regex.Replace(inputText, tbxPRFindWhat.Text, replaceWith, opsReg);
+                }
+            }
+        }
+
         private void btnInputClear_Click(object sender, EventArgs e)
         {
             tbxInpute.Text = "";
@@ -102,6 +167,16 @@ namespace TextTools
         {
             if (cbAuto.Checked)
                 btnStart_Click(sender, e);
+            OperationEnum s = (OperationEnum)Enum.Parse(typeof(OperationEnum), ((string)cbOperation.SelectedItem).Replace(" ", ""));
+            switch (s)
+            {
+                case OperationEnum.ReplaceText:
+                    tabControl1.SelectedTab = pageReplace;
+                    break;
+                default:
+                    tabControl1.SelectedTab = pageBlank;
+                    break;
+            }
         }
         private void tbxInpute_TextChanged(object sender, EventArgs e)
         {
@@ -119,5 +194,19 @@ namespace TextTools
             Clipboard.SetText(tbxOutput.Text);
         }
 
+        private void btnPRReplaceAll_Click(object sender, EventArgs e)
+        {
+            replaceOperation("All");
+        }
+
+        private void btnReplaceNext_Click(object sender, EventArgs e)
+        {
+            replaceOperation("Next");
+        }
+
+        private void cbPRReplacementNumber_CheckedChanged(object sender, EventArgs e)
+        {
+            nuPRReplacementNumber.Enabled = cbPRReplacementNumber.Checked;
+        }
     }
 }

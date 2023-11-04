@@ -42,6 +42,22 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.cbAuto = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pageBlank = new System.Windows.Forms.TabPage();
+            this.pageReplace = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbxPRFindWhat = new System.Windows.Forms.TextBox();
+            this.tbxPRReplaceWith = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nuPRReplacementNumber = new System.Windows.Forms.NumericUpDown();
+            this.cbPRReplacementNumber = new System.Windows.Forms.CheckBox();
+            this.btnReplaceNext = new System.Windows.Forms.Button();
+            this.cbxPRCaseSensitive = new System.Windows.Forms.CheckBox();
+            this.btnPRReplaceAll = new System.Windows.Forms.Button();
+            this.cbxPRUseRegexp = new System.Windows.Forms.CheckBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +76,10 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.pageReplace.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPRReplacementNumber)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -185,6 +205,7 @@
             this.tableLayoutPanel4.Controls.Add(this.btnStart, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.cbAuto, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tabControl1, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -324,6 +345,203 @@
             this.label3.Text = "Operation ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tabControl1
+            // 
+            this.tableLayoutPanel4.SetColumnSpan(this.tabControl1, 6);
+            this.tabControl1.Controls.Add(this.pageBlank);
+            this.tabControl1.Controls.Add(this.pageReplace);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabControl1.Location = new System.Drawing.Point(3, 61);
+            this.tabControl1.Name = "tabControl1";
+            this.tableLayoutPanel4.SetRowSpan(this.tabControl1, 3);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(300, 260);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // pageBlank
+            // 
+            this.pageBlank.Location = new System.Drawing.Point(4, 24);
+            this.pageBlank.Name = "pageBlank";
+            this.pageBlank.Size = new System.Drawing.Size(292, 232);
+            this.pageBlank.TabIndex = 2;
+            this.pageBlank.Text = "blank";
+            this.pageBlank.UseVisualStyleBackColor = true;
+            // 
+            // pageReplace
+            // 
+            this.pageReplace.Controls.Add(this.tableLayoutPanel5);
+            this.pageReplace.Location = new System.Drawing.Point(4, 24);
+            this.pageReplace.Name = "pageReplace";
+            this.pageReplace.Padding = new System.Windows.Forms.Padding(3);
+            this.pageReplace.Size = new System.Drawing.Size(292, 232);
+            this.pageReplace.TabIndex = 0;
+            this.pageReplace.Text = "Replace";
+            this.pageReplace.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbxPRFindWhat, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbxPRReplaceWith, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label6, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.nuPRReplacementNumber, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.cbPRReplacementNumber, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.btnReplaceNext, 1, 6);
+            this.tableLayoutPanel5.Controls.Add(this.cbxPRCaseSensitive, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.btnPRReplaceAll, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.cbxPRUseRegexp, 0, 4);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 7;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 29);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Find What";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxPRFindWhat
+            // 
+            this.tbxPRFindWhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPRFindWhat.Location = new System.Drawing.Point(100, 3);
+            this.tbxPRFindWhat.Name = "tbxPRFindWhat";
+            this.tbxPRFindWhat.Size = new System.Drawing.Size(183, 23);
+            this.tbxPRFindWhat.TabIndex = 1;
+            // 
+            // tbxPRReplaceWith
+            // 
+            this.tbxPRReplaceWith.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPRReplaceWith.Location = new System.Drawing.Point(100, 32);
+            this.tbxPRReplaceWith.Name = "tbxPRReplaceWith";
+            this.tbxPRReplaceWith.Size = new System.Drawing.Size(183, 23);
+            this.tbxPRReplaceWith.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(3, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 29);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Replace With";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(3, 83);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 29);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Replacement";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nuPRReplacementNumber
+            // 
+            this.nuPRReplacementNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nuPRReplacementNumber.Enabled = false;
+            this.nuPRReplacementNumber.Location = new System.Drawing.Point(100, 86);
+            this.nuPRReplacementNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nuPRReplacementNumber.Name = "nuPRReplacementNumber";
+            this.nuPRReplacementNumber.Size = new System.Drawing.Size(183, 23);
+            this.nuPRReplacementNumber.TabIndex = 5;
+            this.nuPRReplacementNumber.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // cbPRReplacementNumber
+            // 
+            this.cbPRReplacementNumber.AutoSize = true;
+            this.tableLayoutPanel5.SetColumnSpan(this.cbPRReplacementNumber, 2);
+            this.cbPRReplacementNumber.Location = new System.Drawing.Point(3, 61);
+            this.cbPRReplacementNumber.Name = "cbPRReplacementNumber";
+            this.cbPRReplacementNumber.Size = new System.Drawing.Size(142, 19);
+            this.cbPRReplacementNumber.TabIndex = 9;
+            this.cbPRReplacementNumber.Text = "Replacement Number";
+            this.cbPRReplacementNumber.UseVisualStyleBackColor = true;
+            this.cbPRReplacementNumber.CheckedChanged += new System.EventHandler(this.cbPRReplacementNumber_CheckedChanged);
+            // 
+            // btnReplaceNext
+            // 
+            this.btnReplaceNext.Location = new System.Drawing.Point(100, 165);
+            this.btnReplaceNext.Name = "btnReplaceNext";
+            this.btnReplaceNext.Size = new System.Drawing.Size(91, 23);
+            this.btnReplaceNext.TabIndex = 7;
+            this.btnReplaceNext.Text = "Replace Next";
+            this.btnReplaceNext.UseVisualStyleBackColor = true;
+            this.btnReplaceNext.Click += new System.EventHandler(this.btnReplaceNext_Click);
+            // 
+            // cbxPRCaseSensitive
+            // 
+            this.cbxPRCaseSensitive.AutoSize = true;
+            this.tableLayoutPanel5.SetColumnSpan(this.cbxPRCaseSensitive, 2);
+            this.cbxPRCaseSensitive.Location = new System.Drawing.Point(3, 140);
+            this.cbxPRCaseSensitive.Name = "cbxPRCaseSensitive";
+            this.cbxPRCaseSensitive.Size = new System.Drawing.Size(100, 19);
+            this.cbxPRCaseSensitive.TabIndex = 10;
+            this.cbxPRCaseSensitive.Text = "Case Sensitive";
+            this.cbxPRCaseSensitive.UseVisualStyleBackColor = true;
+            // 
+            // btnPRReplaceAll
+            // 
+            this.btnPRReplaceAll.Location = new System.Drawing.Point(3, 165);
+            this.btnPRReplaceAll.Name = "btnPRReplaceAll";
+            this.btnPRReplaceAll.Size = new System.Drawing.Size(91, 23);
+            this.btnPRReplaceAll.TabIndex = 6;
+            this.btnPRReplaceAll.Text = "Replace All";
+            this.btnPRReplaceAll.UseVisualStyleBackColor = true;
+            this.btnPRReplaceAll.Click += new System.EventHandler(this.btnPRReplaceAll_Click);
+            // 
+            // cbxPRUseRegexp
+            // 
+            this.cbxPRUseRegexp.AutoSize = true;
+            this.tableLayoutPanel5.SetColumnSpan(this.cbxPRUseRegexp, 2);
+            this.cbxPRUseRegexp.Location = new System.Drawing.Point(3, 115);
+            this.cbxPRUseRegexp.Name = "cbxPRUseRegexp";
+            this.cbxPRUseRegexp.Size = new System.Drawing.Size(90, 19);
+            this.cbxPRUseRegexp.TabIndex = 11;
+            this.cbxPRUseRegexp.Text = "Use Regexp ";
+            this.cbxPRUseRegexp.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(292, 232);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -433,6 +651,11 @@
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.pageReplace.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nuPRReplacementNumber)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -463,5 +686,21 @@
         private Button btnInputCopy;
         private Button btnOutputCopy;
         private ToolTip toolTip1;
+        private TabControl tabControl1;
+        private TabPage pageReplace;
+        private TabPage tabPage2;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Label label4;
+        private TextBox tbxPRFindWhat;
+        private TextBox tbxPRReplaceWith;
+        private Label label5;
+        private Label label6;
+        private NumericUpDown nuPRReplacementNumber;
+        private CheckBox cbPRReplacementNumber;
+        private Button btnReplaceNext;
+        private CheckBox cbxPRCaseSensitive;
+        private Button btnPRReplaceAll;
+        private CheckBox cbxPRUseRegexp;
+        private TabPage pageBlank;
     }
 }
