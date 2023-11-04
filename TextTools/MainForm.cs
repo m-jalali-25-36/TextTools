@@ -19,7 +19,8 @@ namespace TextTools
         private void btnStart_Click(object sender, EventArgs e)
         {
             var textinfo = new CultureInfo("en-US", false).TextInfo;
-            switch (Enum.Parse(typeof(OperationEnum), ((string)cbOperation.SelectedItem).Replace(" ", "")))
+            OperationEnum s = (OperationEnum)Enum.Parse(typeof(OperationEnum), ((string)cbOperation.SelectedItem).Replace(" ", ""));
+            switch (s)
             {
                 case OperationEnum.Uppercase:
                     tbxOutput.Text = tbxInpute.Text.ToUpper();
@@ -35,6 +36,36 @@ namespace TextTools
                     break;
                 case OperationEnum.Lowercase:
                     tbxOutput.Text = tbxInpute.Text.ToLower();
+                    break;
+                case OperationEnum.TrimLinesStart:
+                    tbxOutput.Text = tbxInpute.Text.TrimLinesStart();
+                    break;
+                case OperationEnum.TrimLinesEnd:
+                    tbxOutput.Text = tbxInpute.Text.TrimLinesEnd();
+                    break;
+                case OperationEnum.TrimLines:
+                    tbxOutput.Text = tbxInpute.Text.TrimLines();
+                    break;
+                case OperationEnum.RemoveExtraSpaces:
+                    tbxOutput.Text = tbxInpute.Text.RemoveExtraSpaces();
+                    break;
+                case OperationEnum.ReplaceText:
+                    break;
+                case OperationEnum.SplitText:
+                    break;
+                case OperationEnum.ReverseText:
+                    break;
+                case OperationEnum.AddLineNumbers:
+                    break;
+                case OperationEnum.Urlencode:
+                    break;
+                case OperationEnum.Urldecode:
+                    break;
+                case OperationEnum.FormatJson:
+                    break;
+                case OperationEnum.RemoveDuplicateLines:
+                    break;
+                case OperationEnum.RemoveEmptyLines:
                     break;
                 case OperationEnum.CountCharacters:
                     break;
@@ -71,6 +102,16 @@ namespace TextTools
         {
             if (cbAuto.Checked)
                 btnStart_Click(sender, e);
+        }
+
+        private void btnInputCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbxInpute.Text);
+        }
+
+        private void btnOutputCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbxOutput.Text);
         }
     }
 }

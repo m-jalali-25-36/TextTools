@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxInpute = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInputeToOutput = new System.Windows.Forms.Button();
             this.btnInputClear = new System.Windows.Forms.Button();
+            this.btnInputCopy = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.cbOperation = new System.Windows.Forms.ComboBox();
@@ -44,8 +46,10 @@
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOutputToInput = new System.Windows.Forms.Button();
-            this.btnOutpotClear = new System.Windows.Forms.Button();
+            this.btnOutputClear = new System.Windows.Forms.Button();
+            this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,14 +83,16 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.tbxInpute, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnInputeToOutput, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnInputClear, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnInputeToOutput, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnInputClear, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnInputCopy, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -98,7 +104,7 @@
             // 
             // tbxInpute
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.tbxInpute, 3);
+            this.tableLayoutPanel2.SetColumnSpan(this.tbxInpute, 4);
             this.tbxInpute.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxInpute.Location = new System.Drawing.Point(3, 31);
             this.tbxInpute.Multiline = true;
@@ -118,22 +124,36 @@
             // 
             // btnInputeToOutput
             // 
+            this.btnInputeToOutput.AutoSize = true;
             this.btnInputeToOutput.Location = new System.Drawing.Point(161, 3);
             this.btnInputeToOutput.Name = "btnInputeToOutput";
             this.btnInputeToOutput.Size = new System.Drawing.Size(31, 22);
             this.btnInputeToOutput.TabIndex = 3;
             this.btnInputeToOutput.Text = ">";
+            this.toolTip1.SetToolTip(this.btnInputeToOutput, "Move To Output");
             this.btnInputeToOutput.UseVisualStyleBackColor = true;
             // 
             // btnInputClear
             // 
+            this.btnInputClear.AutoSize = true;
             this.btnInputClear.Location = new System.Drawing.Point(130, 3);
             this.btnInputClear.Name = "btnInputClear";
             this.btnInputClear.Size = new System.Drawing.Size(25, 22);
             this.btnInputClear.TabIndex = 4;
             this.btnInputClear.Text = "C";
+            this.toolTip1.SetToolTip(this.btnInputClear, "Clear");
             this.btnInputClear.UseVisualStyleBackColor = true;
             this.btnInputClear.Click += new System.EventHandler(this.btnInputClear_Click);
+            // 
+            // btnInputCopy
+            // 
+            this.btnInputCopy.Location = new System.Drawing.Point(80, 3);
+            this.btnInputCopy.Name = "btnInputCopy";
+            this.btnInputCopy.Size = new System.Drawing.Size(44, 22);
+            this.btnInputCopy.TabIndex = 5;
+            this.btnInputCopy.Text = "Copy";
+            this.btnInputCopy.UseVisualStyleBackColor = true;
+            this.btnInputCopy.Click += new System.EventHandler(this.btnInputCopy_Click);
             // 
             // splitContainer2
             // 
@@ -305,14 +325,16 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.tbxOutput, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnOutputToInput, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnOutpotClear, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputToInput, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputClear, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputCopy, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -324,7 +346,7 @@
             // 
             // tbxOutput
             // 
-            this.tableLayoutPanel3.SetColumnSpan(this.tbxOutput, 3);
+            this.tableLayoutPanel3.SetColumnSpan(this.tbxOutput, 4);
             this.tbxOutput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxOutput.Location = new System.Drawing.Point(3, 31);
             this.tbxOutput.Multiline = true;
@@ -343,23 +365,37 @@
             // 
             // btnOutputToInput
             // 
+            this.btnOutputToInput.AutoSize = true;
             this.btnOutputToInput.Location = new System.Drawing.Point(164, 3);
             this.btnOutputToInput.Name = "btnOutputToInput";
             this.btnOutputToInput.Size = new System.Drawing.Size(28, 22);
             this.btnOutputToInput.TabIndex = 3;
             this.btnOutputToInput.Text = "<";
+            this.toolTip1.SetToolTip(this.btnOutputToInput, "Move To Input");
             this.btnOutputToInput.UseVisualStyleBackColor = true;
             this.btnOutputToInput.Click += new System.EventHandler(this.btnOutputToInput_Click);
             // 
-            // btnOutpotClear
+            // btnOutputClear
             // 
-            this.btnOutpotClear.Location = new System.Drawing.Point(134, 3);
-            this.btnOutpotClear.Name = "btnOutpotClear";
-            this.btnOutpotClear.Size = new System.Drawing.Size(24, 22);
-            this.btnOutpotClear.TabIndex = 4;
-            this.btnOutpotClear.Text = "C";
-            this.btnOutpotClear.UseVisualStyleBackColor = true;
-            this.btnOutpotClear.Click += new System.EventHandler(this.btnOutpotClear_Click);
+            this.btnOutputClear.AutoSize = true;
+            this.btnOutputClear.Location = new System.Drawing.Point(133, 3);
+            this.btnOutputClear.Name = "btnOutputClear";
+            this.btnOutputClear.Size = new System.Drawing.Size(25, 22);
+            this.btnOutputClear.TabIndex = 4;
+            this.btnOutputClear.Text = "C";
+            this.toolTip1.SetToolTip(this.btnOutputClear, "Clear");
+            this.btnOutputClear.UseVisualStyleBackColor = true;
+            this.btnOutputClear.Click += new System.EventHandler(this.btnOutpotClear_Click);
+            // 
+            // btnOutputCopy
+            // 
+            this.btnOutputCopy.Location = new System.Drawing.Point(83, 3);
+            this.btnOutputCopy.Name = "btnOutputCopy";
+            this.btnOutputCopy.Size = new System.Drawing.Size(44, 22);
+            this.btnOutputCopy.TabIndex = 5;
+            this.btnOutputCopy.Text = "Copy";
+            this.btnOutputCopy.UseVisualStyleBackColor = true;
+            this.btnOutputCopy.Click += new System.EventHandler(this.btnOutputCopy_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -422,6 +458,9 @@
         private Button btnInputeToOutput;
         private Button btnInputClear;
         private Button btnOutputToInput;
-        private Button btnOutpotClear;
+        private Button btnOutputClear;
+        private Button btnInputCopy;
+        private Button btnOutputCopy;
+        private ToolTip toolTip1;
     }
 }
