@@ -11,7 +11,7 @@ namespace TextTools
             var operationList = Enum.GetNames(typeof(OperationEnum));
             for (int i = 0; i < operationList.Length; i++)
             {
-                cbOperation.Items.Add(Enum.Parse(typeof(OperationEnum), operationList[i]));
+                cbOperation.Items.Add(operationList[i].TitleCaseWithSpace());
             }
             cbOperation.SelectedIndex = 1;
         }
@@ -19,13 +19,19 @@ namespace TextTools
         private void btnStart_Click(object sender, EventArgs e)
         {
             var textinfo = new CultureInfo("en-US", false).TextInfo;
-            switch ((OperationEnum)cbOperation.SelectedItem)
+            switch (Enum.Parse(typeof(OperationEnum), ((string)cbOperation.SelectedItem).Replace(" ", "")))
             {
                 case OperationEnum.Uppercase:
                     tbxOutput.Text = tbxInpute.Text.ToUpper();
                     break;
                 case OperationEnum.TitleCase:
                     tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.ToLower());
+                    break;
+                case OperationEnum.TitleCaseWithoutSpace:
+                    tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.ToLower()).Replace(" ", "");
+                    break;
+                case OperationEnum.TitleCaseWithSpace:
+                    tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.TitleCaseWithSpace());
                     break;
                 case OperationEnum.Lowercase:
                     tbxOutput.Text = tbxInpute.Text.ToLower();
