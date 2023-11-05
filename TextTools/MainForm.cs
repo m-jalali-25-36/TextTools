@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Web;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -94,8 +95,11 @@ namespace TextTools
                     addLineNumbersOperation();
                     break;
                 case OperationEnum.Urlencode:
+                    OutputText = HttpUtility.UrlEncode(InputText);
                     break;
                 case OperationEnum.Urldecode:
+                    OutputText = HttpUtility.UrlDecode(InputText);
+                    break;
                 case OperationEnum.GatheringInALine:
                     gatheringInALineOperation();
                     break;
