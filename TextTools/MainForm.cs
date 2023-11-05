@@ -96,6 +96,8 @@ namespace TextTools
                 case OperationEnum.Urlencode:
                     break;
                 case OperationEnum.Urldecode:
+                case OperationEnum.GatheringInALine:
+                    gatheringInALineOperation();
                     break;
                 case OperationEnum.FormatJson:
                     break;
@@ -112,6 +114,11 @@ namespace TextTools
                 default:
                     break;
             }
+        }
+
+        private void gatheringInALineOperation()
+        {
+            OutputText = InputText.Replace("\n", "\\n").Replace("\t", "\\t");
         }
 
         private void addLineNumbersOperation()
