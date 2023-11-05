@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tbxInpute = new System.Windows.Forms.TextBox();
+            this.tbxInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInputeToOutput = new System.Windows.Forms.Button();
             this.btnInputClear = new System.Windows.Forms.Button();
@@ -57,7 +57,16 @@
             this.cbxPRCaseSensitive = new System.Windows.Forms.CheckBox();
             this.btnPRReplaceAll = new System.Windows.Forms.Button();
             this.cbxPRUseRegexp = new System.Windows.Forms.CheckBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pageSplit = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbxPSSeparator = new System.Windows.Forms.TextBox();
+            this.tbxPSResultStart = new System.Windows.Forms.TextBox();
+            this.tbxPSResultSeparator = new System.Windows.Forms.TextBox();
+            this.tbxPSResultEnd = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,6 +89,8 @@
             this.pageReplace.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPRReplacementNumber)).BeginInit();
+            this.pageSplit.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +119,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.tbxInpute, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tbxInput, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInputeToOutput, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnInputClear, 2, 0);
@@ -124,14 +135,14 @@
             // 
             // tbxInpute
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.tbxInpute, 4);
-            this.tbxInpute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxInpute.Location = new System.Drawing.Point(3, 31);
-            this.tbxInpute.Multiline = true;
-            this.tbxInpute.Name = "tbxInpute";
-            this.tbxInpute.Size = new System.Drawing.Size(189, 290);
-            this.tbxInpute.TabIndex = 1;
-            this.tbxInpute.TextChanged += new System.EventHandler(this.tbxInpute_TextChanged);
+            this.tableLayoutPanel2.SetColumnSpan(this.tbxInput, 4);
+            this.tbxInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxInput.Location = new System.Drawing.Point(3, 31);
+            this.tbxInput.Multiline = true;
+            this.tbxInput.Name = "tbxInpute";
+            this.tbxInput.Size = new System.Drawing.Size(189, 290);
+            this.tbxInput.TabIndex = 1;
+            this.tbxInput.TextChanged += new System.EventHandler(this.tbxInpute_TextChanged);
             // 
             // label1
             // 
@@ -350,7 +361,7 @@
             this.tableLayoutPanel4.SetColumnSpan(this.tabControl1, 6);
             this.tabControl1.Controls.Add(this.pageBlank);
             this.tabControl1.Controls.Add(this.pageReplace);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.pageSplit);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(3, 61);
@@ -532,15 +543,119 @@
             this.cbxPRUseRegexp.Text = "Use Regexp ";
             this.cbxPRUseRegexp.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // pageSplit
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(292, 232);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pageSplit.Controls.Add(this.tableLayoutPanel6);
+            this.pageSplit.Location = new System.Drawing.Point(4, 24);
+            this.pageSplit.Name = "pageSplit";
+            this.pageSplit.Padding = new System.Windows.Forms.Padding(3);
+            this.pageSplit.Size = new System.Drawing.Size(292, 232);
+            this.pageSplit.TabIndex = 1;
+            this.pageSplit.Text = "Split";
+            this.pageSplit.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tbxPSSeparator, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tbxPSResultStart, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tbxPSResultSeparator, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.tbxPSResultEnd, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label9, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label10, 0, 3);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 5;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 29);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Separator";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxPSSeparator
+            // 
+            this.tbxPSSeparator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPSSeparator.Location = new System.Drawing.Point(101, 3);
+            this.tbxPSSeparator.Name = "tbxPSSeparator";
+            this.tbxPSSeparator.Size = new System.Drawing.Size(182, 23);
+            this.tbxPSSeparator.TabIndex = 1;
+            this.tbxPSSeparator.Text = ",";
+            // 
+            // tbxPSResultStart
+            // 
+            this.tbxPSResultStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPSResultStart.Location = new System.Drawing.Point(101, 32);
+            this.tbxPSResultStart.Name = "tbxPSResultStart";
+            this.tbxPSResultStart.Size = new System.Drawing.Size(182, 23);
+            this.tbxPSResultStart.TabIndex = 2;
+            // 
+            // tbxPSResultSeparator
+            // 
+            this.tbxPSResultSeparator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPSResultSeparator.Location = new System.Drawing.Point(101, 61);
+            this.tbxPSResultSeparator.Name = "tbxPSResultSeparator";
+            this.tbxPSResultSeparator.Size = new System.Drawing.Size(182, 23);
+            this.tbxPSResultSeparator.TabIndex = 3;
+            this.tbxPSResultSeparator.Text = "\\n";
+            // 
+            // tbxPSResultEnd
+            // 
+            this.tbxPSResultEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPSResultEnd.Location = new System.Drawing.Point(101, 90);
+            this.tbxPSResultEnd.Name = "tbxPSResultEnd";
+            this.tbxPSResultEnd.Size = new System.Drawing.Size(182, 23);
+            this.tbxPSResultEnd.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(3, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 29);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Result Start";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(3, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 29);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Result Separator";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Location = new System.Drawing.Point(3, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 29);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Result End";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel3
             // 
@@ -656,6 +771,9 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuPRReplacementNumber)).EndInit();
+            this.pageSplit.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -667,7 +785,7 @@
 
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutPanel2;
-        private TextBox tbxInpute;
+        private TextBox tbxInput;
         private Label label1;
         private SplitContainer splitContainer2;
         private TableLayoutPanel tableLayoutPanel4;
@@ -688,7 +806,7 @@
         private ToolTip toolTip1;
         private TabControl tabControl1;
         private TabPage pageReplace;
-        private TabPage tabPage2;
+        private TabPage pageSplit;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label4;
         private TextBox tbxPRFindWhat;
@@ -702,5 +820,14 @@
         private Button btnPRReplaceAll;
         private CheckBox cbxPRUseRegexp;
         private TabPage pageBlank;
+        private TableLayoutPanel tableLayoutPanel6;
+        private Label label7;
+        private TextBox tbxPSSeparator;
+        private TextBox tbxPSResultStart;
+        private TextBox tbxPSResultSeparator;
+        private TextBox tbxPSResultEnd;
+        private Label label8;
+        private Label label9;
+        private Label label10;
     }
 }

@@ -10,6 +10,14 @@ namespace TextTools
 {
     public static class TextToolsExtensions
     {
+        public static string ToRegexChar(this TextBox textBox)
+        {
+            return textBox.Text.Replace("\\n", "\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+        }
+        public static string ToRegexChar(this string text)
+        {
+            return text.Replace("\\n", "\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+        }
         public static string TitleCaseWithSpace(this string text)
         {
             for (int i = 1; i < text.Length; i++)
@@ -25,30 +33,30 @@ namespace TextTools
         public static string TrimLinesStart(this string text)
         {
             string result = "";
-            var lins = text.Split("\r\n");
+            var lins = text.Split("\n");
             for (int i = 0; i < lins.Length; i++)
             {
-                result += lins[i].TrimStart() + "\r\n";
+                result += lins[i].TrimStart() + "\n";
             }
             return result;
         }
         public static string TrimLinesEnd(this string text)
         {
             string result = "";
-            var lins = text.Split("\r\n");
+            var lins = text.Split("\n");
             for (int i = 0; i < lins.Length; i++)
             {
-                result += lins[i].TrimEnd() + "\r\n";
+                result += lins[i].TrimEnd() + "\n";
             }
             return result;
         }
         public static string TrimLines(this string text)
         {
             string result = "";
-            var lins = text.Split("\r\n");
+            var lins = text.Split("\n");
             for (int i = 0; i < lins.Length; i++)
             {
-                result += lins[i].Trim() + "\r\n";
+                result += lins[i].Trim() + "\n";
             }
             return result;
         }

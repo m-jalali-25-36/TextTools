@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace TextTools
 {
@@ -20,6 +21,29 @@ namespace TextTools
             tabControl1.SizeMode = TabSizeMode.Fixed;
         }
 
+        public string InputText
+        {
+            get
+            {
+                return tbxInput.Text.Replace("\r\n", "\n");
+            }
+            set
+            {
+                tbxInput.Text = value.Replace("\n", "\r\n");
+            }
+        }
+        public string OutputText
+        {
+            get
+            {
+                return tbxOutput.Text.Replace("\r\n", "\n");
+            }
+            set
+            {
+                tbxOutput.Text = value.Replace("\n", "\r\n");
+            }
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             var textinfo = new CultureInfo("en-US", false).TextInfo;
@@ -27,36 +51,37 @@ namespace TextTools
             switch (s)
             {
                 case OperationEnum.Uppercase:
-                    tbxOutput.Text = tbxInpute.Text.ToUpper();
+                    OutputText = InputText.ToUpper();
                     break;
                 case OperationEnum.TitleCase:
-                    tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.ToLower());
+                    OutputText = textinfo.ToTitleCase(InputText.ToLower());
                     break;
                 case OperationEnum.TitleCaseWithoutSpace:
-                    tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.ToLower()).Replace(" ", "");
+                    OutputText = textinfo.ToTitleCase(InputText.ToLower()).Replace(" ", "");
                     break;
                 case OperationEnum.TitleCaseWithSpace:
-                    tbxOutput.Text = textinfo.ToTitleCase(tbxInpute.Text.TitleCaseWithSpace());
+                    OutputText = textinfo.ToTitleCase(InputText.TitleCaseWithSpace());
                     break;
                 case OperationEnum.Lowercase:
-                    tbxOutput.Text = tbxInpute.Text.ToLower();
+                    OutputText = InputText.ToLower();
                     break;
                 case OperationEnum.TrimLinesStart:
-                    tbxOutput.Text = tbxInpute.Text.TrimLinesStart();
+                    OutputText = InputText.TrimLinesStart();
                     break;
                 case OperationEnum.TrimLinesEnd:
-                    tbxOutput.Text = tbxInpute.Text.TrimLinesEnd();
+                    OutputText = InputText.TrimLinesEnd();
                     break;
                 case OperationEnum.TrimLines:
-                    tbxOutput.Text = tbxInpute.Text.TrimLines();
+                    OutputText = InputText.TrimLines();
                     break;
                 case OperationEnum.RemoveExtraSpaces:
-                    tbxOutput.Text = tbxInpute.Text.RemoveExtraSpaces();
+                    OutputText = InputText.RemoveExtraSpaces();
                     break;
                 case OperationEnum.ReplaceText:
                     replaceOperation();
                     break;
                 case OperationEnum.SplitText:
+                    splitTextOperation();
                     break;
                 case OperationEnum.ReverseText:
                     break;
@@ -83,6 +108,14 @@ namespace TextTools
             }
         }
 
+        private void splitTextOperation()
+        {
+            OutputText = tbxPSResultStart.ToRegexChar()
+                + InputText.Split(tbxPSSeparator.ToRegexChar())
+                .Aggregate((x, y) => $"{x}{tbxPSResultSeparator.ToRegexChar()}{y}")
+                + tbxPSResultEnd.ToRegexChar();
+        }
+
         private void replaceOperation(string arg = "All")
         {
             StringComparison opsStr = StringComparison.InvariantCultureIgnoreCase;
@@ -93,9 +126,9 @@ namespace TextTools
                 opsReg = RegexOptions.None;
             }
             string replaceWith = tbxPRReplaceWith.Text;
-            string inputText = tbxInpute.Text;
+            string inputText = InputText;
             if (cbxPRUseRegexp.Checked)
-                replaceWith = replaceWith.Replace("\\n", "\r\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+                replaceWith = replaceWith.ToRegexChar();
             if (arg == "Next" || cbPRReplacementNumber.Checked)
             {
                 int rep = 0;
@@ -128,39 +161,39 @@ namespace TextTools
                     }
                     rep++;
                 } while (cbPRReplacementNumber.Checked && rep < nuPRReplacementNumber.Value);
-                tbxOutput.Text = inputText;
+                OutputText = inputText;
             }
             else
             {
                 if (!cbxPRUseRegexp.Checked)
                 {
-                    tbxOutput.Text = inputText.Replace(tbxPRFindWhat.Text, replaceWith, opsStr);
+                    OutputText = inputText.Replace(tbxPRFindWhat.Text, replaceWith, opsStr);
                 }
                 else
                 {
-                    tbxOutput.Text = Regex.Replace(inputText, tbxPRFindWhat.Text, replaceWith, opsReg);
+                    OutputText = Regex.Replace(inputText, tbxPRFindWhat.Text, replaceWith, opsReg);
                 }
             }
         }
 
         private void btnInputClear_Click(object sender, EventArgs e)
         {
-            tbxInpute.Text = "";
+            InputText = "";
         }
 
         private void btnOutpotClear_Click(object sender, EventArgs e)
         {
-            tbxOutput.Text = "";
+            OutputText = "";
         }
 
         private void btnOutputToInput_Click(object sender, EventArgs e)
         {
-            tbxInpute.Text = tbxOutput.Text;
+            InputText = OutputText;
         }
 
         private void btnInputeToOutput_Click(object sender, EventArgs e)
         {
-            tbxOutput.Text = tbxInpute.Text;
+            OutputText = InputText;
         }
 
         private void cbOperation_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,6 +205,9 @@ namespace TextTools
             {
                 case OperationEnum.ReplaceText:
                     tabControl1.SelectedTab = pageReplace;
+                    break;
+                case OperationEnum.SplitText:
+                    tabControl1.SelectedTab = pageSplit;
                     break;
                 default:
                     tabControl1.SelectedTab = pageBlank;
@@ -186,12 +222,12 @@ namespace TextTools
 
         private void btnInputCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(tbxInpute.Text);
+            Clipboard.SetText(InputText);
         }
 
         private void btnOutputCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(tbxOutput.Text);
+            Clipboard.SetText(OutputText);
         }
 
         private void btnPRReplaceAll_Click(object sender, EventArgs e)
