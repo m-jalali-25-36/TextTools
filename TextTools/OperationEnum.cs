@@ -20,6 +20,7 @@ namespace TextTools
         ReplaceText,
         SplitText,
         ReverseText,
+        ReverseLine,
         AddLineNumbers,
         Urlencode,
         Urldecode,

@@ -67,9 +67,19 @@ namespace TextTools
         public static string ReverseText(this string text)
         {
             string result = "";
-            for (int i = text.Length; i >= 0 ; i--)
+            for (int i = text.Length-1; i >= 0 ; i--)
             {
                 result +=  text[i];
+            }
+            return result;
+        }
+        public static string ReverseLine(this string text)
+        {
+            string result = "";
+            var lins = text.Split("\n");
+            for (int i = 0; i < lins.Length; i++)
+            {
+                result += lins[i].ReverseText() + "\n";
             }
             return result;
         }

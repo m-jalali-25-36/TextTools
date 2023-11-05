@@ -87,6 +87,9 @@ namespace TextTools
                 case OperationEnum.ReverseText:
                     OutputText = InputText.ReverseText();
                     break;
+                case OperationEnum.ReverseLine:
+                    OutputText = InputText.ReverseLine();
+                    break;
                 case OperationEnum.AddLineNumbers:
                     addLineNumbersOperation();
                     break;
