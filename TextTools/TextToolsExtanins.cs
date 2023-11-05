@@ -64,5 +64,14 @@ namespace TextTools
         {
             return Regex.Replace(text, @"[ ]+", " ").TrimLines();
         }
+        public static string ReverseText(this string text)
+        {
+            string result = "";
+            for (int i = text.Length; i >= 0 ; i--)
+            {
+                result +=  text[i];
+            }
+            return result;
+        }
     }
 }

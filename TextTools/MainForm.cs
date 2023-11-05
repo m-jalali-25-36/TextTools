@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TextTools
 {
@@ -84,8 +85,10 @@ namespace TextTools
                     splitTextOperation();
                     break;
                 case OperationEnum.ReverseText:
+                    OutputText = InputText.ReverseText();
                     break;
                 case OperationEnum.AddLineNumbers:
+                    addLineNumbersOperation();
                     break;
                 case OperationEnum.Urlencode:
                     break;
@@ -106,6 +109,17 @@ namespace TextTools
                 default:
                     break;
             }
+        }
+
+        private void addLineNumbersOperation()
+        {
+            string result = "";
+            var lins = InputText.Split("\n");
+            for (int i = 0; i < lins.Length; i++)
+            {
+                result += $"{i + 1} {lins[i]}\n";
+            }
+            OutputText = result;
         }
 
         private void splitTextOperation()
