@@ -13,6 +13,8 @@ namespace TextTools
         TitleCaseWithoutSpace,
         TitleCaseWithSpace,
         Lowercase,
+        SnakeCase,
+        InvertCase,
         TrimLinesStart,
         TrimLinesEnd,
         TrimLines,

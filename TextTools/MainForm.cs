@@ -67,6 +67,12 @@ namespace TextTools
                 case OperationEnum.Lowercase:
                     OutputText = InputText.ToLower();
                     break;
+                case OperationEnum.SnakeCase:
+                    OutputText = InputText.TitleCaseWithSpace().ToLower().Replace(" ", "_").Replace("_\n", "\n");
+                    break;
+                case OperationEnum.InvertCase:
+                    OutputText = InputText.InvertCase();
+                    break;
                 case OperationEnum.TrimLinesStart:
                     OutputText = InputText.TrimLinesStart();
                     break;

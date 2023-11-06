@@ -50,6 +50,20 @@ namespace TextTools
             }
             return result;
         }
+        public static string InvertCase(this string text)
+        {
+            string result = "";
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] >= 'A' && text[i] <= 'Z')
+                    result += (char)((int)text[i] + (int)'a' - (int)'A');
+                else if (text[i] >= 'a' && text[i] <= 'z')
+                    result += (char)((int)text[i] - (int)'a' + (int)'A');
+                else
+                    result += text[i];
+            }
+            return result;
+        }
         public static string TrimLines(this string text)
         {
             string result = "";
