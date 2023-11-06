@@ -31,6 +31,7 @@ namespace TextTools
         FormatJson,
         RemoveDuplicateLines,
         RemoveEmptyLines,
+        ConvertToAsciiCodeNumber,
         CountCharacters,
         CountWords,
         CountLines,

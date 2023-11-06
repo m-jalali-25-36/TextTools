@@ -125,9 +125,23 @@ namespace TextTools
                     break;
                 case OperationEnum.CountLines:
                     break;
+                case OperationEnum.ConvertToAsciiCodeNumber:
+                    convertToAsciiCodeNumberOpration();
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void convertToAsciiCodeNumberOpration()
+        {
+            string result = "";
+            string text = InputText;
+            for (int i = 0; i < text.Length; i++)
+            {
+                result += $"{(int)text[i]} ";
+            }
+            OutputText = result;
         }
 
         private void addLineNumbersOperation()
