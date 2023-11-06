@@ -117,6 +117,7 @@ namespace TextTools
                 case OperationEnum.RemoveDuplicateLines:
                     break;
                 case OperationEnum.RemoveEmptyLines:
+                    OutputText = InputText.RemoveEmptyLines();
                     break;
                 case OperationEnum.CountCharacters:
                     break;

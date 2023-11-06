@@ -115,5 +115,16 @@ namespace TextTools
             }
             return result;
         }
+        public static string RemoveEmptyLines(this string text)
+        {
+            string result = "";
+            var lins = text.Split("\n");
+            for (int i = 0; i < lins.Length; i++)
+            {
+                if (!string.IsNullOrWhiteSpace(lins[i]))
+                    result += lins[i] + "\n";
+            }
+            return result;
+        }
     }
 }
