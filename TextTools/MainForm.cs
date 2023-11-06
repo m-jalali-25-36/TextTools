@@ -125,15 +125,52 @@ namespace TextTools
                     break;
                 case OperationEnum.CountLines:
                     break;
+                case OperationEnum.NumbersOperations:
+                    numbersOperation();
+                    break;
                 case OperationEnum.ConvertToAsciiCodeNumber:
-                    convertToAsciiCodeNumberOpration();
+                    convertToAsciiCodeNumberOperation();
                     break;
                 default:
                     break;
             }
         }
 
-        private void convertToAsciiCodeNumberOpration()
+        private void numbersOperation()
+        {
+            double sum = 0;
+            long count = 0;
+            double middle;
+            List<double> sortList = new List<double>();
+            double t;
+            var num = InputText.Split(" ");
+            for (int i = 0; i < num.Length; i++)
+            {
+                if (double.TryParse(num[i], out t))
+                {
+                    sum += t;
+                    count++;
+                    sortList.Add(t);
+                }
+            }
+            if (count <= 0)
+                return;
+            sortList.Sort();
+            if (sortList.Count % 2 == 0)
+                middle = (sortList[sortList.Count / 2] + sortList[(sortList.Count / 2) + 1]) / 2;
+            else if (sortList.Count > 1)
+                middle = sortList[(sortList.Count + 1) / 2];
+            else
+                middle = sortList[0];
+
+            OutputText = $"sum: {sum}\n" +
+                $"Count: {count}\n" +
+                $"Average: {sum / count}\n" +
+                $"Middle: {middle}\n" +
+                "Sort: " + sortList.Select(a => a.ToString()).Aggregate((x, y) => $"{x} {y}");
+        }
+
+        private void convertToAsciiCodeNumberOperation()
         {
             string result = "";
             string text = InputText;

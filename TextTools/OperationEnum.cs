@@ -32,6 +32,7 @@ namespace TextTools
         RemoveDuplicateLines,
         RemoveEmptyLines,
         ConvertToAsciiCodeNumber,
+        NumbersOperations,
         CountCharacters,
         CountWords,
         CountLines,
