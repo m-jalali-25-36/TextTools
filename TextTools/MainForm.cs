@@ -26,6 +26,9 @@ namespace TextTools
             tbxAPSPrefix.TextChanged += autoStart;
             tbxAPSSuffix.TextChanged += autoStart;
             cbAuto.CheckedChanged += autoStart;
+            tbxSBRegex.TextChanged += autoStart;
+            tbxSPSPrefix.TextChanged += autoStart;
+            tbxSPSSuffix.TextChanged += autoStart;
         }
 
         public string InputText
@@ -96,6 +99,12 @@ namespace TextTools
                 case OperationEnum.SplitText:
                     splitTextOperation();
                     break;
+                case OperationEnum.SelectTextByRegex:
+                    selectTextByRegexOperation();
+                    break;
+                case OperationEnum.SelectTextByPrefixSuffix:
+                    selectTextByPrefixSuffixOperation();
+                    break;
                 case OperationEnum.ReverseText:
                     OutputText = InputText.ReverseText();
                     break;
@@ -141,6 +150,60 @@ namespace TextTools
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void selectTextByRegexOperation()
+        {
+            string result = "";
+            string text = InputText;
+            if (string.IsNullOrEmpty(tbxSBRegex.ToControlChar()))
+            {
+                OutputText = "";
+                return;
+            }
+            try
+            {
+                Match match = Regex.Match(text, tbxSBRegex.ToControlChar());
+                while (match.Success)
+                {
+                    result += $"{match.Value}\n";
+                    match = match.NextMatch();
+                }
+                OutputText = result;
+            }
+            catch (Exception ex)
+            {
+                OutputText = "";
+            }
+        }
+
+        private void selectTextByPrefixSuffixOperation()
+        {
+            string result = "";
+            string text = InputText;
+            if (string.IsNullOrEmpty(tbxSPSPrefix.ToControlChar()) || string.IsNullOrEmpty(tbxSPSSuffix.ToControlChar()))
+            {
+                OutputText = "";
+                return;
+            }
+            try
+            {
+                Match matchPrefix = Regex.Match(text, tbxSPSPrefix.ToControlChar());
+                Match matchSuffix = Regex.Match(text, tbxSPSSuffix.ToControlChar());
+                while (matchPrefix.Success && matchSuffix.Success && matchPrefix.Index < matchSuffix.Index)
+                {
+                    int indexStart = matchPrefix.Index + matchPrefix.Value.Length;
+                    int length = matchSuffix.Index - indexStart;
+                    result += $"{text.Substring(indexStart, length)}\n";
+                    matchPrefix = matchPrefix.NextMatch();
+                    matchSuffix = matchSuffix.NextMatch();
+                }
+                OutputText = result;
+            }
+            catch (Exception ex)
+            {
+                OutputText = "";
             }
         }
 
@@ -314,6 +377,12 @@ namespace TextTools
                     break;
                 case OperationEnum.AddPrefixSuffixIntoEachLine:
                     tabControl1.SelectedTab = pageAddPrefixSuffix;
+                    break;
+                case OperationEnum.SelectTextByRegex:
+                    tabControl1.SelectedTab = pageSelectByRegex;
+                    break;
+                case OperationEnum.SelectTextByPrefixSuffix:
+                    tabControl1.SelectedTab = pageSelectByPrefixSuffix;
                     break;
                 default:
                     tabControl1.SelectedTab = pageBlank;

@@ -21,6 +21,8 @@ namespace TextTools
         RemoveExtraSpaces,
         ReplaceText,
         SplitText,
+        SelectTextByRegex,
+        SelectTextByPrefixSuffix,
         ReverseText,
         ReverseLine,
         AddLineNumbers,

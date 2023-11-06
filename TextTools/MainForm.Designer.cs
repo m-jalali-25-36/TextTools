@@ -73,6 +73,10 @@
             this.tbxAPSPrefix = new System.Windows.Forms.TextBox();
             this.tbxAPSSuffix = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.pageSelectByRegex = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbxSBRegex = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,6 +85,12 @@
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pageSelectByPrefixSuffix = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbxSPSPrefix = new System.Windows.Forms.TextBox();
+            this.tbxSPSSuffix = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,8 +109,12 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.pageAddPrefixSuffix.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.pageSelectByRegex.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pageSelectByPrefixSuffix.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -370,6 +384,8 @@
             this.tabControl1.Controls.Add(this.pageReplace);
             this.tabControl1.Controls.Add(this.pageSplit);
             this.tabControl1.Controls.Add(this.pageAddPrefixSuffix);
+            this.tabControl1.Controls.Add(this.pageSelectByRegex);
+            this.tabControl1.Controls.Add(this.pageSelectByPrefixSuffix);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(3, 61);
@@ -734,6 +750,55 @@
             this.label12.Text = "Suffix";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pageSelectByRegex
+            // 
+            this.pageSelectByRegex.Controls.Add(this.tableLayoutPanel8);
+            this.pageSelectByRegex.Location = new System.Drawing.Point(4, 24);
+            this.pageSelectByRegex.Name = "pageSelectByRegex";
+            this.pageSelectByRegex.Padding = new System.Windows.Forms.Padding(3);
+            this.pageSelectByRegex.Size = new System.Drawing.Size(292, 232);
+            this.pageSelectByRegex.TabIndex = 4;
+            this.pageSelectByRegex.Text = "SelectByRegex";
+            this.pageSelectByRegex.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tbxSBRegex, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 5;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel8.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 29);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Regex";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxSBRegex
+            // 
+            this.tbxSBRegex.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxSBRegex.Location = new System.Drawing.Point(48, 3);
+            this.tbxSBRegex.Name = "tbxSBRegex";
+            this.tbxSBRegex.Size = new System.Drawing.Size(243, 23);
+            this.tbxSBRegex.TabIndex = 1;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -823,6 +888,76 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // pageSelectByPrefixSuffix
+            // 
+            this.pageSelectByPrefixSuffix.Controls.Add(this.tableLayoutPanel9);
+            this.pageSelectByPrefixSuffix.Location = new System.Drawing.Point(4, 24);
+            this.pageSelectByPrefixSuffix.Name = "pageSelectByPrefixSuffix";
+            this.pageSelectByPrefixSuffix.Padding = new System.Windows.Forms.Padding(3);
+            this.pageSelectByPrefixSuffix.Size = new System.Drawing.Size(292, 232);
+            this.pageSelectByPrefixSuffix.TabIndex = 5;
+            this.pageSelectByPrefixSuffix.Text = "Select";
+            this.pageSelectByPrefixSuffix.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxSPSPrefix, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.tbxSPSSuffix, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.label15, 0, 1);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 5;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel9.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(37, 29);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Prefix";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxSPSPrefix
+            // 
+            this.tbxSPSPrefix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxSPSPrefix.Location = new System.Drawing.Point(46, 3);
+            this.tbxSPSPrefix.Name = "tbxSPSPrefix";
+            this.tbxSPSPrefix.Size = new System.Drawing.Size(243, 23);
+            this.tbxSPSPrefix.TabIndex = 1;
+            // 
+            // tbxSPSSuffix
+            // 
+            this.tbxSPSSuffix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxSPSSuffix.Location = new System.Drawing.Point(46, 32);
+            this.tbxSPSSuffix.Name = "tbxSPSSuffix";
+            this.tbxSPSSuffix.Size = new System.Drawing.Size(243, 23);
+            this.tbxSPSSuffix.TabIndex = 2;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Location = new System.Drawing.Point(3, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 29);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Suffix";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -854,9 +989,15 @@
             this.pageAddPrefixSuffix.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.pageSelectByRegex.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.pageSelectByPrefixSuffix.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -915,5 +1056,15 @@
         private TextBox tbxAPSPrefix;
         private TextBox tbxAPSSuffix;
         private Label label12;
+        private TabPage pageSelectByRegex;
+        private TableLayoutPanel tableLayoutPanel8;
+        private Label label13;
+        private TextBox tbxSBRegex;
+        private TabPage pageSelectByPrefixSuffix;
+        private TableLayoutPanel tableLayoutPanel9;
+        private Label label14;
+        private TextBox tbxSPSPrefix;
+        private TextBox tbxSPSSuffix;
+        private Label label15;
     }
 }
