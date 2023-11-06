@@ -67,6 +67,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pageAddPrefixSuffix = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbxAPSPrefix = new System.Windows.Forms.TextBox();
+            this.tbxAPSSuffix = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,12 +81,6 @@
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pageAddPrefixSuffix = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbxAPSPrefix = new System.Windows.Forms.TextBox();
-            this.tbxAPSSuffix = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -97,10 +97,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nuPRReplacementNumber)).BeginInit();
             this.pageSplit.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.pageAddPrefixSuffix.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -150,7 +150,6 @@
             this.tbxInput.Name = "tbxInput";
             this.tbxInput.Size = new System.Drawing.Size(189, 290);
             this.tbxInput.TabIndex = 1;
-            this.tbxInput.TextChanged += new System.EventHandler(this.tbxInpute_TextChanged);
             // 
             // label1
             // 
@@ -666,6 +665,75 @@
             this.label10.Text = "Result End";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // pageAddPrefixSuffix
+            // 
+            this.pageAddPrefixSuffix.Controls.Add(this.tableLayoutPanel7);
+            this.pageAddPrefixSuffix.Location = new System.Drawing.Point(4, 24);
+            this.pageAddPrefixSuffix.Name = "pageAddPrefixSuffix";
+            this.pageAddPrefixSuffix.Size = new System.Drawing.Size(292, 232);
+            this.pageAddPrefixSuffix.TabIndex = 3;
+            this.pageAddPrefixSuffix.Text = "AddPrefixSuffix";
+            this.pageAddPrefixSuffix.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tbxAPSPrefix, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tbxAPSSuffix, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 5;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(292, 232);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(37, 29);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Prefix";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxAPSPrefix
+            // 
+            this.tbxAPSPrefix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxAPSPrefix.Location = new System.Drawing.Point(46, 3);
+            this.tbxAPSPrefix.Name = "tbxAPSPrefix";
+            this.tbxAPSPrefix.Size = new System.Drawing.Size(243, 23);
+            this.tbxAPSPrefix.TabIndex = 1;
+            // 
+            // tbxAPSSuffix
+            // 
+            this.tbxAPSSuffix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxAPSSuffix.Location = new System.Drawing.Point(46, 32);
+            this.tbxAPSSuffix.Name = "tbxAPSSuffix";
+            this.tbxAPSSuffix.Size = new System.Drawing.Size(243, 23);
+            this.tbxAPSSuffix.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Location = new System.Drawing.Point(3, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 29);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Suffix";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -755,75 +823,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // pageAddPrefixSuffix
-            // 
-            this.pageAddPrefixSuffix.Controls.Add(this.tableLayoutPanel7);
-            this.pageAddPrefixSuffix.Location = new System.Drawing.Point(4, 24);
-            this.pageAddPrefixSuffix.Name = "pageAddPrefixSuffix";
-            this.pageAddPrefixSuffix.Size = new System.Drawing.Size(292, 232);
-            this.pageAddPrefixSuffix.TabIndex = 3;
-            this.pageAddPrefixSuffix.Text = "AddPrefixSuffix";
-            this.pageAddPrefixSuffix.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tbxAPSPrefix, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tbxAPSSuffix, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 1);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 5;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(292, 232);
-            this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 29);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Prefix";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tbxAPSPrefix
-            // 
-            this.tbxAPSPrefix.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxAPSPrefix.Location = new System.Drawing.Point(46, 3);
-            this.tbxAPSPrefix.Name = "tbxAPSPrefix";
-            this.tbxAPSPrefix.Size = new System.Drawing.Size(243, 23);
-            this.tbxAPSPrefix.TabIndex = 1;
-            // 
-            // tbxAPSSuffix
-            // 
-            this.tbxAPSSuffix.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxAPSSuffix.Location = new System.Drawing.Point(46, 32);
-            this.tbxAPSSuffix.Name = "tbxAPSSuffix";
-            this.tbxAPSSuffix.Size = new System.Drawing.Size(243, 23);
-            this.tbxAPSSuffix.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(3, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 29);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Suffix";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -852,12 +851,12 @@
             this.pageSplit.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.pageAddPrefixSuffix.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

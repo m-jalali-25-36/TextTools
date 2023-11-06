@@ -21,6 +21,11 @@ namespace TextTools
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
+
+            tbxInput.TextChanged += autoStart;
+            tbxAPSPrefix.TextChanged += autoStart;
+            tbxAPSSuffix.TextChanged += autoStart;
+            cbAuto.CheckedChanged += autoStart;
         }
 
         public string InputText
@@ -315,7 +320,7 @@ namespace TextTools
                     break;
             }
         }
-        private void tbxInpute_TextChanged(object sender, EventArgs e)
+        private void autoStart(object sender, EventArgs e)
         {
             if (cbAuto.Checked)
                 btnStart_Click(sender, e);
@@ -345,5 +350,6 @@ namespace TextTools
         {
             nuPRReplacementNumber.Enabled = cbPRReplacementNumber.Checked;
         }
+
     }
 }
