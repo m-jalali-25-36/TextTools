@@ -33,6 +33,7 @@ namespace TextTools
         RemoveEmptyLines,
         ConvertToAsciiCodeNumber,
         NumbersOperations,
+        AddPrefixSuffixIntoEachLine,
         CountCharacters,
         CountWords,
         CountLines,

@@ -131,9 +131,23 @@ namespace TextTools
                 case OperationEnum.ConvertToAsciiCodeNumber:
                     convertToAsciiCodeNumberOperation();
                     break;
+                case OperationEnum.AddPrefixSuffixIntoEachLine:
+                    addPrefixSuffixIntoEachLineOperation();
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void addPrefixSuffixIntoEachLineOperation()
+        {
+            string result = "";
+            var lins = InputText.Split("\n");
+            for (int i = 0; i < lins.Length; i++)
+            {
+                result += $"{tbxAPSPrefix.Text}{lins[i]}{tbxAPSSuffix.Text}\n";
+            }
+            OutputText = result;
         }
 
         private void numbersOperation()
@@ -292,6 +306,9 @@ namespace TextTools
                     break;
                 case OperationEnum.SplitText:
                     tabControl1.SelectedTab = pageSplit;
+                    break;
+                case OperationEnum.AddPrefixSuffixIntoEachLine:
+                    tabControl1.SelectedTab = pageAddPrefixSuffix;
                     break;
                 default:
                     tabControl1.SelectedTab = pageBlank;
