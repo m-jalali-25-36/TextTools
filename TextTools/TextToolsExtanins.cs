@@ -22,7 +22,7 @@ namespace TextTools
         {
             for (int i = 1; i < text.Length; i++)
             {
-                if (text[i] >= 'A' && text[i] <= 'Z' && text[i - 1] != ' ')
+                if (text[i] >= 'A' && text[i] <= 'Z' && text[i - 1] != ' ' && text[i - 1] != '\n')
                 {
                     text = text.Insert(i, " ");
                     i++;
