@@ -107,7 +107,10 @@ namespace TextTools
                     OutputText = HttpUtility.UrlDecode(InputText);
                     break;
                 case OperationEnum.GatheringInALine:
-                    gatheringInALineOperation();
+                    OutputText = InputText.Replace("\n", "\\n").Replace("\t", "\\t");
+                    break;
+                case OperationEnum.ApplyControlCharacter:
+                    OutputText = InputText.ToControlChar();
                     break;
                 case OperationEnum.FormatJson:
                     break;
@@ -126,11 +129,6 @@ namespace TextTools
             }
         }
 
-        private void gatheringInALineOperation()
-        {
-            OutputText = InputText.Replace("\n", "\\n").Replace("\t", "\\t");
-        }
-
         private void addLineNumbersOperation()
         {
             string result = "";
@@ -144,10 +142,10 @@ namespace TextTools
 
         private void splitTextOperation()
         {
-            OutputText = tbxPSResultStart.ToRegexChar()
-                + InputText.Split(tbxPSSeparator.ToRegexChar())
-                .Aggregate((x, y) => $"{x}{tbxPSResultSeparator.ToRegexChar()}{y}")
-                + tbxPSResultEnd.ToRegexChar();
+            OutputText = tbxPSResultStart.ToControlChar()
+                + InputText.Split(tbxPSSeparator.ToControlChar())
+                .Aggregate((x, y) => $"{x}{tbxPSResultSeparator.ToControlChar()}{y}")
+                + tbxPSResultEnd.ToControlChar();
         }
 
         private void replaceOperation(string arg = "All")
@@ -162,7 +160,7 @@ namespace TextTools
             string replaceWith = tbxPRReplaceWith.Text;
             string inputText = InputText;
             if (cbxPRUseRegexp.Checked)
-                replaceWith = replaceWith.ToRegexChar();
+                replaceWith = replaceWith.ToControlChar();
             if (arg == "Next" || cbPRReplacementNumber.Checked)
             {
                 int rep = 0;

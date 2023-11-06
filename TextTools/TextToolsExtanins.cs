@@ -10,13 +10,31 @@ namespace TextTools
 {
     public static class TextToolsExtensions
     {
-        public static string ToRegexChar(this TextBox textBox)
+        public static string ToControlChar(this TextBox textBox)
         {
-            return textBox.Text.Replace("\\n", "\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+            return textBox.Text.Replace("\\n", "\n")
+                .Replace("\\\\", "\\")
+                .Replace("\\r", "\r")
+                .Replace("\\a", "\a")
+                .Replace("\\b", "\b")
+                .Replace("\\f", "\f")
+                .Replace("\\'", "\'")
+                .Replace("\\\"", "\"")
+                .Replace("\\v", "\v")
+                .Replace("\\t", "\t");
         }
-        public static string ToRegexChar(this string text)
+        public static string ToControlChar(this string text)
         {
-            return text.Replace("\\n", "\n").Replace("\\\\", "\\").Replace("\\t", "\t");
+            return text.Replace("\\n", "\n")
+                .Replace("\\\\", "\\")
+                .Replace("\\r", "\r")
+                .Replace("\\a", "\a")
+                .Replace("\\b", "\b")
+                .Replace("\\f", "\f")
+                .Replace("\\'", "\'")
+                .Replace("\\\"", "\"")
+                .Replace("\\v", "\v")
+                .Replace("\\t", "\t");
         }
         public static string TitleCaseWithSpace(this string text)
         {
@@ -81,9 +99,9 @@ namespace TextTools
         public static string ReverseText(this string text)
         {
             string result = "";
-            for (int i = text.Length-1; i >= 0 ; i--)
+            for (int i = text.Length - 1; i >= 0; i--)
             {
-                result +=  text[i];
+                result += text[i];
             }
             return result;
         }

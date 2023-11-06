@@ -27,6 +27,7 @@ namespace TextTools
         Urlencode,
         Urldecode,
         GatheringInALine,
+        ApplyControlCharacter,
         FormatJson,
         RemoveDuplicateLines,
         RemoveEmptyLines,
