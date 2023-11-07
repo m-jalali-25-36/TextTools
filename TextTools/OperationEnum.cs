@@ -32,14 +32,15 @@ namespace TextTools
         Urldecode,
         GatheringInALine,
         ApplyControlCharacter,
-        FormatJson,
-        RemoveDuplicateLines,
+        FormatJson, // -----
+        RemoveDuplicateLines, // -----
         RemoveEmptyLines,
         ConvertToAsciiCodeNumber,
         NumbersOperations,
         AddPrefixSuffixIntoEachLine,
-        CountCharacters,
-        CountWords,
-        CountLines,
+        SortLines,
+        CountCharacters, // -----
+        CountWords, // -----
+        CountLines, // -----
     }
 }

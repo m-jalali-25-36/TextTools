@@ -81,6 +81,9 @@ namespace TextTools
                 case OperationEnum.InvertCase:
                     OutputText = InputText.InvertCase();
                     break;
+                case OperationEnum.SortLines:
+                    OutputText = InputText.SortLines();
+                    break;
                 case OperationEnum.TrimLinesStart:
                     OutputText = InputText.TrimLinesStart();
                     break;

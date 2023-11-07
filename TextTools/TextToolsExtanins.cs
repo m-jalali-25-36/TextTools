@@ -48,6 +48,12 @@ namespace TextTools
             }
             return text;
         }
+        public static string SortLines(this string text)
+        {
+            var lins = text.Split("\n").ToList();
+            lins.Sort();
+            return lins.Aggregate((x, y) => $"{x}\n{y}");
+        }
         public static string TrimLinesStart(this string text)
         {
             string result = "";
