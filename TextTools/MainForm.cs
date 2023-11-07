@@ -102,6 +102,9 @@ namespace TextTools
                 case OperationEnum.ReplaceText:
                     replaceOperation();
                     break;
+                case OperationEnum.AdvancedReplace:
+                    advancedReplaceOperation();
+                    break;
                 case OperationEnum.SplitText:
                     splitTextOperation();
                     break;
@@ -169,6 +172,16 @@ namespace TextTools
                 default:
                     break;
             }
+        }
+
+        private void advancedReplaceOperation()
+        {
+            OutputText = InputText.AdvancedReplace(
+                tbxPARFindWhat.ToControlChar(),
+                tbxPARReplaceWith.ToControlChar(),
+                q => q,
+                tbxPARSelectedKeyword.Text
+                );
         }
 
         private void textRepeatLoopOperation()
@@ -436,6 +449,9 @@ namespace TextTools
             {
                 case OperationEnum.ReplaceText:
                     tabControl1.SelectedTab = pageReplace;
+                    break;
+                case OperationEnum.AdvancedReplace:
+                    tabControl1.SelectedTab = pageAdvancedReplace;
                     break;
                 case OperationEnum.SplitText:
                     tabControl1.SelectedTab = pageSplit;

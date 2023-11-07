@@ -93,6 +93,14 @@
             this.dgvcStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcRepeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcFormatString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pageAdvancedReplace = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbxPARSelectedKeyword = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tbxPARFindWhat = new System.Windows.Forms.TextBox();
+            this.tbxPARReplaceWith = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -101,6 +109,7 @@
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -125,6 +134,8 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.pageTextRepeatLoop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTextRepeatLoop)).BeginInit();
+            this.pageAdvancedReplace.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
