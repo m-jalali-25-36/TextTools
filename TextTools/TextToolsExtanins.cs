@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
@@ -131,6 +133,36 @@ namespace TextTools
                     result += lins[i] + "\n";
             }
             return result;
+        }
+        public static string AdvancedReplace(this string text, string selectPattern, string replacement, Func<string, string> func, string replacePattern = "%value%", RegexOptions regenOption = RegexOptions.None)
+        {
+            string result = "";
+            int startIndex = 0;
+            if (func == null)
+                func = q => q;
+            Match match = Regex.Match(text, selectPattern, regenOption);
+            while (match.Success)
+            {
+                result += text.Substring(startIndex, match.Index - startIndex) +
+                       Regex.Replace(replacement, replacePattern, func(match.Value));
+                startIndex = match.Index + match.Length;
+                match = match.NextMatch();
+            }
+            return result + text.Substring(startIndex);
+        }
+        public static string AddCommasToNumbers(this string text)
+        {
+            text= text.AdvancedReplace("^[0-9,]+[./]?[0-9,]*( |\n)",
+                "%value%\n",
+                q => string.Format("{0:#,###.#}", double.Parse(q.Replace("/", ".").Replace(",", ""), CultureInfo.InvariantCulture)),
+                regenOption: RegexOptions.Multiline
+                );
+            text= text.AdvancedReplace(" [0-9,]+[./]?[0-9,]* ",
+                " %value% ",
+                q => string.Format("{0:#,###.#}", double.Parse(q.Replace("/", ".").Replace(",", ""), CultureInfo.InvariantCulture)),
+                regenOption: RegexOptions.Multiline
+                );
+            return text;
         }
         public static string StripHTMLTags(this string text)
         {

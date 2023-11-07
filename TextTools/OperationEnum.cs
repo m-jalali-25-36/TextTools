@@ -8,6 +8,7 @@ namespace TextTools
 {
     enum OperationEnum
     {
+        AddCommasToNumbers,
         AddLineNumbers,
         AddPrefixSuffixIntoEachLine,
         ApplyControlCharacter,

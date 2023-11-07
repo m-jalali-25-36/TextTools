@@ -96,6 +96,9 @@ namespace TextTools
                 case OperationEnum.RemoveExtraSpaces:
                     OutputText = InputText.RemoveExtraSpaces();
                     break;
+                case OperationEnum.AddCommasToNumbers:
+                    OutputText = InputText.AddCommasToNumbers();
+                    break;
                 case OperationEnum.ReplaceText:
                     replaceOperation();
                     break;
