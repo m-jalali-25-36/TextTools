@@ -8,39 +8,39 @@ namespace TextTools
 {
     enum OperationEnum
     {
-        Uppercase,
+        AddLineNumbers,
+        AddPrefixSuffixIntoEachLine,
+        ApplyControlCharacter,
+        ConvertToAsciiCodeNumber,
+        CountCharacters, // -----
+        CountLines, // -----
+        CountWords, // -----
+        FormatJson, // -----
+        GatheringInALine,
+        InvertCase,
+        Lowercase,
+        NumbersOperations,
+        RemoveDuplicateLines, // -----
+        RemoveEmptyLines,
+        RemoveExtraSpaces,
+        ReplaceText,
+        ReverseLine,
+        ReverseText,
+        SelectTextByPrefixSuffix,
+        SelectTextByRegex,
+        SnakeCase,
+        SortLines,
+        SplitText,
+        StripHtmlTags,
+        TextRepeatLoop,
         TitleCase,
         TitleCaseWithoutSpace,
         TitleCaseWithSpace,
-        Lowercase,
-        SnakeCase,
-        InvertCase,
-        TrimLinesStart,
-        TrimLinesEnd,
         TrimLines,
-        RemoveExtraSpaces,
-        ReplaceText,
-        SplitText,
-        SelectTextByRegex,
-        SelectTextByPrefixSuffix,
-        TextRepeatLoop,
-        StripHtmlTags,
-        ReverseText,
-        ReverseLine,
-        AddLineNumbers,
-        Urlencode,
+        TrimLinesEnd,
+        TrimLinesStart,
         Urldecode,
-        GatheringInALine,
-        ApplyControlCharacter,
-        FormatJson, // -----
-        RemoveDuplicateLines, // -----
-        RemoveEmptyLines,
-        ConvertToAsciiCodeNumber,
-        NumbersOperations,
-        AddPrefixSuffixIntoEachLine,
-        SortLines,
-        CountCharacters, // -----
-        CountWords, // -----
-        CountLines, // -----
+        Urlencode,
+        Uppercase,
     }
 }
