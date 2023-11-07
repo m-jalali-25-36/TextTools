@@ -111,7 +111,7 @@ namespace TextTools
                 case OperationEnum.ReverseLine:
                     OutputText = InputText.ReverseLine();
                     break;
-                case OperationEnum.StripHTMLTags:
+                case OperationEnum.StripHtmlTags:
                     OutputText = InputText.StripHTMLTags();
                     break;
                 case OperationEnum.AddLineNumbers:
@@ -145,6 +145,9 @@ namespace TextTools
                 case OperationEnum.NumbersOperations:
                     numbersOperation();
                     break;
+                case OperationEnum.TextRepeatLoop:
+                    textRepeatLoopOperation();
+                    break;
                 case OperationEnum.ConvertToAsciiCodeNumber:
                     convertToAsciiCodeNumberOperation();
                     break;
@@ -153,6 +156,53 @@ namespace TextTools
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void textRepeatLoopOperation()
+        {
+            try
+            {
+                var data = new List<TextRepeatLoopClass.Loop>();
+                foreach (DataGridViewRow row in dgvTextRepeatLoop.Rows)
+                {
+                    if (row.Cells["dgvcID"].Value == null)
+                        continue;
+                    var loop = new TextRepeatLoopClass.Loop();
+                    loop.ID = int.Parse(row.Cells["dgvcID"].Value.ToString());
+                    loop.KeyWord = row.Cells["dgvcKeyWord"].Value.ToString().ToControlChar();
+                    loop.FormatString = row.Cells["dgvcFormatString"].Value?.ToString();
+                    loop.Start = double.Parse(row.Cells["dgvcStart"].Value.ToString(), CultureInfo.InvariantCulture);
+                    loop.End = double.Parse(row.Cells["dgvcEnd"].Value.ToString(), CultureInfo.InvariantCulture);
+                    loop.Step = double.Parse(row.Cells["dgvcStep"].Value.ToString(), CultureInfo.InvariantCulture);
+                    data.Add(loop);
+                }
+                var loops = new List<TextRepeatLoopClass.Loop>();
+                foreach (DataGridViewRow row in dgvTextRepeatLoop.Rows)
+                {
+                    if (row.Cells["dgvcID"].Value == null)
+                        continue;
+                    int id = int.Parse(row.Cells["dgvcID"].Value.ToString());
+                    var loopChild = data.First(q => q.ID == id);
+                    int parent = int.Parse(row.Cells["dgvcParent"].Value.ToString());
+                    if (parent == 0)
+                    {
+                        loops.Add(loopChild);
+                        continue;
+                    }
+                    var loopParent = data.FirstOrDefault(q => q.ID == parent);
+                    if (loopParent == null)
+                    {
+                        loops.Add(loopChild);
+                        continue;
+                    }
+                    loopParent.InnerLoop.Add(loopChild);
+                }
+                OutputText = InputText.TextRepeatLoopOperation(loops);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in input data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -386,6 +436,9 @@ namespace TextTools
                     break;
                 case OperationEnum.SelectTextByPrefixSuffix:
                     tabControl1.SelectedTab = pageSelectByPrefixSuffix;
+                    break;
+                case OperationEnum.TextRepeatLoop:
+                    tabControl1.SelectedTab = pageTextRepeatLoop;
                     break;
                 default:
                     tabControl1.SelectedTab = pageBlank;

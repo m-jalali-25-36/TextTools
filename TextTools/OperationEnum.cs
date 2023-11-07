@@ -23,6 +23,7 @@ namespace TextTools
         SplitText,
         SelectTextByRegex,
         SelectTextByPrefixSuffix,
+        TextRepeatLoop,
         StripHtmlTags,
         ReverseText,
         ReverseLine,

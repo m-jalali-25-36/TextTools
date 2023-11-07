@@ -91,6 +91,16 @@
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.pageTextRepeatLoop = new System.Windows.Forms.TabPage();
+            this.dgvTextRepeatLoop = new System.Windows.Forms.DataGridView();
+            this.dgvcID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcParent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcKeyWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcRepeat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcFormatString = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -115,6 +125,8 @@
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pageTextRepeatLoop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTextRepeatLoop)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -387,6 +399,7 @@
             this.tabControl1.Controls.Add(this.pageAddPrefixSuffix);
             this.tabControl1.Controls.Add(this.pageSelectByRegex);
             this.tabControl1.Controls.Add(this.pageSelectByPrefixSuffix);
+            this.tabControl1.Controls.Add(this.pageTextRepeatLoop);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(3, 61);
@@ -960,6 +973,87 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
+            // pageTextRepeatLoop
+            // 
+            this.pageTextRepeatLoop.Controls.Add(this.dgvTextRepeatLoop);
+            this.pageTextRepeatLoop.Location = new System.Drawing.Point(4, 24);
+            this.pageTextRepeatLoop.Name = "pageTextRepeatLoop";
+            this.pageTextRepeatLoop.Padding = new System.Windows.Forms.Padding(3);
+            this.pageTextRepeatLoop.Size = new System.Drawing.Size(292, 232);
+            this.pageTextRepeatLoop.TabIndex = 6;
+            this.pageTextRepeatLoop.Text = "Text Repeat";
+            this.pageTextRepeatLoop.UseVisualStyleBackColor = true;
+            // 
+            // dgvTextRepeatLoop
+            // 
+            this.dgvTextRepeatLoop.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvTextRepeatLoop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTextRepeatLoop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvcID,
+            this.dgvcParent,
+            this.dgvcKeyWord,
+            this.dgvcStart,
+            this.dgvcEnd,
+            this.dgvcStep,
+            this.dgvcRepeat,
+            this.dgvcFormatString});
+            this.dgvTextRepeatLoop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTextRepeatLoop.GridColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dgvTextRepeatLoop.Location = new System.Drawing.Point(3, 3);
+            this.dgvTextRepeatLoop.Name = "dgvTextRepeatLoop";
+            this.dgvTextRepeatLoop.RowTemplate.Height = 25;
+            this.dgvTextRepeatLoop.Size = new System.Drawing.Size(286, 226);
+            this.dgvTextRepeatLoop.TabIndex = 0;
+            // 
+            // dgvcID
+            // 
+            this.dgvcID.HeaderText = "ID";
+            this.dgvcID.Name = "dgvcID";
+            this.dgvcID.Width = 20;
+            // 
+            // dgvcParent
+            // 
+            this.dgvcParent.HeaderText = "Parent";
+            this.dgvcParent.Name = "dgvcParent";
+            this.dgvcParent.Width = 20;
+            // 
+            // dgvcKeyWord
+            // 
+            this.dgvcKeyWord.HeaderText = "Key Word";
+            this.dgvcKeyWord.Name = "dgvcKeyWord";
+            this.dgvcKeyWord.Width = 70;
+            // 
+            // dgvcStart
+            // 
+            this.dgvcStart.HeaderText = "Start";
+            this.dgvcStart.Name = "dgvcStart";
+            this.dgvcStart.Width = 40;
+            // 
+            // dgvcEnd
+            // 
+            this.dgvcEnd.HeaderText = "End";
+            this.dgvcEnd.Name = "dgvcEnd";
+            this.dgvcEnd.Width = 40;
+            // 
+            // dgvcStep
+            // 
+            this.dgvcStep.HeaderText = "Step";
+            this.dgvcStep.Name = "dgvcStep";
+            this.dgvcStep.Width = 40;
+            // 
+            // dgvcRepeat
+            // 
+            this.dgvcRepeat.HeaderText = "Repeat";
+            this.dgvcRepeat.Name = "dgvcRepeat";
+            this.dgvcRepeat.ReadOnly = true;
+            this.dgvcRepeat.Width = 40;
+            // 
+            // dgvcFormatString
+            // 
+            this.dgvcFormatString.HeaderText = "Format String";
+            this.dgvcFormatString.Name = "dgvcFormatString";
+            this.dgvcFormatString.Width = 70;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1000,6 +1094,8 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.pageTextRepeatLoop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTextRepeatLoop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1068,5 +1164,15 @@
         private TextBox tbxSPSPrefix;
         private TextBox tbxSPSSuffix;
         private Label label15;
+        private TabPage pageTextRepeatLoop;
+        private DataGridView dgvTextRepeatLoop;
+        private DataGridViewTextBoxColumn dgvcID;
+        private DataGridViewTextBoxColumn dgvcParent;
+        private DataGridViewTextBoxColumn dgvcKeyWord;
+        private DataGridViewTextBoxColumn dgvcStart;
+        private DataGridViewTextBoxColumn dgvcEnd;
+        private DataGridViewTextBoxColumn dgvcStep;
+        private DataGridViewTextBoxColumn dgvcRepeat;
+        private DataGridViewTextBoxColumn dgvcFormatString;
     }
 }
