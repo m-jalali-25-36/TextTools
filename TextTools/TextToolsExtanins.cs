@@ -126,5 +126,9 @@ namespace TextTools
             }
             return result;
         }
+        public static string StripHTMLTags(this string text)
+        {
+            return Regex.Replace(text, "<.*?>", " ").RemoveExtraSpaces().RemoveEmptyLines();
+        }
     }
 }

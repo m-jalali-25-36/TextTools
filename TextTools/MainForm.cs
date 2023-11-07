@@ -111,6 +111,9 @@ namespace TextTools
                 case OperationEnum.ReverseLine:
                     OutputText = InputText.ReverseLine();
                     break;
+                case OperationEnum.StripHTMLTags:
+                    OutputText = InputText.StripHTMLTags();
+                    break;
                 case OperationEnum.AddLineNumbers:
                     addLineNumbersOperation();
                     break;

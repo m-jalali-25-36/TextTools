@@ -77,6 +77,12 @@
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxSBRegex = new System.Windows.Forms.TextBox();
+            this.pageSelectByPrefixSuffix = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbxSPSPrefix = new System.Windows.Forms.TextBox();
+            this.tbxSPSSuffix = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tbxOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,12 +91,6 @@
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pageSelectByPrefixSuffix = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.tbxSPSPrefix = new System.Windows.Forms.TextBox();
-            this.tbxSPSSuffix = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -111,10 +111,10 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.pageSelectByRegex.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.pageSelectByPrefixSuffix.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -160,6 +160,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.tbxInput, 4);
             this.tbxInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbxInput.Location = new System.Drawing.Point(3, 31);
+            this.tbxInput.MaxLength = 999999999;
             this.tbxInput.Multiline = true;
             this.tbxInput.Name = "tbxInput";
             this.tbxInput.Size = new System.Drawing.Size(189, 290);
@@ -799,95 +800,6 @@
             this.tbxSBRegex.Size = new System.Drawing.Size(243, 23);
             this.tbxSBRegex.TabIndex = 1;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.tbxOutput, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnOutputToInput, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnOutputClear, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnOutputCopy, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.950617F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04939F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(195, 324);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // tbxOutput
-            // 
-            this.tableLayoutPanel3.SetColumnSpan(this.tbxOutput, 4);
-            this.tbxOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbxOutput.Location = new System.Drawing.Point(3, 31);
-            this.tbxOutput.Multiline = true;
-            this.tbxOutput.Name = "tbxOutput";
-            this.tbxOutput.Size = new System.Drawing.Size(189, 290);
-            this.tbxOutput.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Output";
-            // 
-            // btnOutputToInput
-            // 
-            this.btnOutputToInput.AutoSize = true;
-            this.btnOutputToInput.Location = new System.Drawing.Point(164, 3);
-            this.btnOutputToInput.Name = "btnOutputToInput";
-            this.btnOutputToInput.Size = new System.Drawing.Size(28, 22);
-            this.btnOutputToInput.TabIndex = 3;
-            this.btnOutputToInput.Text = "<";
-            this.toolTip1.SetToolTip(this.btnOutputToInput, "Move To Input");
-            this.btnOutputToInput.UseVisualStyleBackColor = true;
-            this.btnOutputToInput.Click += new System.EventHandler(this.btnOutputToInput_Click);
-            // 
-            // btnOutputClear
-            // 
-            this.btnOutputClear.AutoSize = true;
-            this.btnOutputClear.Location = new System.Drawing.Point(133, 3);
-            this.btnOutputClear.Name = "btnOutputClear";
-            this.btnOutputClear.Size = new System.Drawing.Size(25, 22);
-            this.btnOutputClear.TabIndex = 4;
-            this.btnOutputClear.Text = "C";
-            this.toolTip1.SetToolTip(this.btnOutputClear, "Clear");
-            this.btnOutputClear.UseVisualStyleBackColor = true;
-            this.btnOutputClear.Click += new System.EventHandler(this.btnOutpotClear_Click);
-            // 
-            // btnOutputCopy
-            // 
-            this.btnOutputCopy.Location = new System.Drawing.Point(83, 3);
-            this.btnOutputCopy.Name = "btnOutputCopy";
-            this.btnOutputCopy.Size = new System.Drawing.Size(44, 22);
-            this.btnOutputCopy.TabIndex = 5;
-            this.btnOutputCopy.Text = "Copy";
-            this.btnOutputCopy.UseVisualStyleBackColor = true;
-            this.btnOutputCopy.Click += new System.EventHandler(this.btnOutputCopy_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.21495F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.78505F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
             // pageSelectByPrefixSuffix
             // 
             this.pageSelectByPrefixSuffix.Controls.Add(this.tableLayoutPanel9);
@@ -958,6 +870,96 @@
             this.label15.Text = "Suffix";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.tbxOutput, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputToInput, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputClear, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnOutputCopy, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.950617F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04939F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(195, 324);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tbxOutput
+            // 
+            this.tableLayoutPanel3.SetColumnSpan(this.tbxOutput, 4);
+            this.tbxOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxOutput.Location = new System.Drawing.Point(3, 31);
+            this.tbxOutput.MaxLength = 999999999;
+            this.tbxOutput.Multiline = true;
+            this.tbxOutput.Name = "tbxOutput";
+            this.tbxOutput.Size = new System.Drawing.Size(189, 290);
+            this.tbxOutput.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Output";
+            // 
+            // btnOutputToInput
+            // 
+            this.btnOutputToInput.AutoSize = true;
+            this.btnOutputToInput.Location = new System.Drawing.Point(164, 3);
+            this.btnOutputToInput.Name = "btnOutputToInput";
+            this.btnOutputToInput.Size = new System.Drawing.Size(28, 22);
+            this.btnOutputToInput.TabIndex = 3;
+            this.btnOutputToInput.Text = "<";
+            this.toolTip1.SetToolTip(this.btnOutputToInput, "Move To Input");
+            this.btnOutputToInput.UseVisualStyleBackColor = true;
+            this.btnOutputToInput.Click += new System.EventHandler(this.btnOutputToInput_Click);
+            // 
+            // btnOutputClear
+            // 
+            this.btnOutputClear.AutoSize = true;
+            this.btnOutputClear.Location = new System.Drawing.Point(133, 3);
+            this.btnOutputClear.Name = "btnOutputClear";
+            this.btnOutputClear.Size = new System.Drawing.Size(25, 22);
+            this.btnOutputClear.TabIndex = 4;
+            this.btnOutputClear.Text = "C";
+            this.toolTip1.SetToolTip(this.btnOutputClear, "Clear");
+            this.btnOutputClear.UseVisualStyleBackColor = true;
+            this.btnOutputClear.Click += new System.EventHandler(this.btnOutpotClear_Click);
+            // 
+            // btnOutputCopy
+            // 
+            this.btnOutputCopy.Location = new System.Drawing.Point(83, 3);
+            this.btnOutputCopy.Name = "btnOutputCopy";
+            this.btnOutputCopy.Size = new System.Drawing.Size(44, 22);
+            this.btnOutputCopy.TabIndex = 5;
+            this.btnOutputCopy.Text = "Copy";
+            this.btnOutputCopy.UseVisualStyleBackColor = true;
+            this.btnOutputCopy.Click += new System.EventHandler(this.btnOutputCopy_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.21495F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.78505F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -992,12 +994,12 @@
             this.pageSelectByRegex.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.pageSelectByPrefixSuffix.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
