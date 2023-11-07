@@ -108,8 +108,8 @@
             this.btnOutputClear = new System.Windows.Forms.Button();
             this.btnOutputCopy = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label19 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -154,7 +154,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(704, 324);
-            this.splitContainer1.SplitterDistance = 195;
+            this.splitContainer1.SplitterDistance = 225;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -175,7 +176,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.950617F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04939F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(195, 324);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(225, 324);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tbxInput
@@ -186,22 +187,24 @@
             this.tbxInput.MaxLength = 999999999;
             this.tbxInput.Multiline = true;
             this.tbxInput.Name = "tbxInput";
-            this.tbxInput.Size = new System.Drawing.Size(189, 290);
+            this.tbxInput.Size = new System.Drawing.Size(219, 290);
             this.tbxInput.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.Size = new System.Drawing.Size(101, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Input";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnInputeToOutput
             // 
             this.btnInputeToOutput.AutoSize = true;
-            this.btnInputeToOutput.Location = new System.Drawing.Point(161, 3);
+            this.btnInputeToOutput.Location = new System.Drawing.Point(191, 3);
             this.btnInputeToOutput.Name = "btnInputeToOutput";
             this.btnInputeToOutput.Size = new System.Drawing.Size(31, 22);
             this.btnInputeToOutput.TabIndex = 3;
@@ -212,7 +215,7 @@
             // btnInputClear
             // 
             this.btnInputClear.AutoSize = true;
-            this.btnInputClear.Location = new System.Drawing.Point(130, 3);
+            this.btnInputClear.Location = new System.Drawing.Point(160, 3);
             this.btnInputClear.Name = "btnInputClear";
             this.btnInputClear.Size = new System.Drawing.Size(25, 22);
             this.btnInputClear.TabIndex = 4;
@@ -223,7 +226,7 @@
             // 
             // btnInputCopy
             // 
-            this.btnInputCopy.Location = new System.Drawing.Point(80, 3);
+            this.btnInputCopy.Location = new System.Drawing.Point(110, 3);
             this.btnInputCopy.Name = "btnInputCopy";
             this.btnInputCopy.Size = new System.Drawing.Size(44, 22);
             this.btnInputCopy.TabIndex = 5;
@@ -244,8 +247,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel3);
-            this.splitContainer2.Size = new System.Drawing.Size(505, 324);
-            this.splitContainer2.SplitterDistance = 306;
+            this.splitContainer2.Size = new System.Drawing.Size(474, 324);
+            this.splitContainer2.SplitterDistance = 262;
             this.splitContainer2.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -271,7 +274,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(306, 324);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(262, 324);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // cbOperation
@@ -280,89 +283,9 @@
             this.cbOperation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOperation.FormattingEnabled = true;
-            this.cbOperation.Items.AddRange(new object[] {
-            "Uppercase",
-            "Title Case",
-            "Lowercase",
-            "Count characters",
-            "Count words",
-            "Count lines",
-            "Rotate 13",
-            "Sort lines alpha (case insensitive)",
-            "Sort lines alpha",
-            "Word frequency",
-            "Character frequency",
-            "Column from table",
-            "Trim lines start",
-            "Trim lines end",
-            "Trim lines",
-            "Replace text with new line",
-            "Replace text",
-            "Replace text regexp",
-            "Format JSON",
-            "URLEncode",
-            "URLDecode",
-            "base64encode",
-            "base64decode",
-            "Add line numbers",
-            "Split text",
-            "Reverse text",
-            "Generate numbers",
-            "Unix to date",
-            "Identify Hash",
-            "Prefix/Suffix lines",
-            "Format Numbers",
-            "Underscore",
-            "Strikeout",
-            "Shuffle",
-            "Remove duplicate lines",
-            "Remove empty lines",
-            "Expand template",
-            "Indent with spaces",
-            "Slugify - Converts string to slug replacing non-ascii symbols with",
-            "Strip non-alphanumeric - Strips non-alphanumeric characters ↑Uppercase",
-            "Title Case",
-            "Lowercase",
-            "Count characters",
-            "Count words",
-            "Count lines",
-            "Rotate 13",
-            "Sort lines alpha (case insensitive)",
-            "Sort lines alpha",
-            "Word frequency",
-            "Character frequency",
-            "Column from table",
-            "Trim lines start",
-            "Trim lines end",
-            "Trim lines",
-            "Replace text with new line",
-            "Replace text",
-            "Replace text regexp",
-            "Format JSON",
-            "URLEncode",
-            "URLDecode",
-            "base64encode",
-            "base64decode",
-            "Add line numbers",
-            "Split text",
-            "Reverse text",
-            "Generate numbers",
-            "Unix to date",
-            "Identify Hash",
-            "Prefix/Suffix lines",
-            "Format Numbers",
-            "Underscore",
-            "Strikeout",
-            "Shuffle",
-            "Remove duplicate lines",
-            "Remove empty lines",
-            "Expand template",
-            "Indent with spaces",
-            "Slugify",
-            "Strip non-alphanumeric"});
-            this.cbOperation.Location = new System.Drawing.Point(105, 3);
+            this.cbOperation.Location = new System.Drawing.Point(89, 3);
             this.cbOperation.Name = "cbOperation";
-            this.cbOperation.Size = new System.Drawing.Size(198, 23);
+            this.cbOperation.Size = new System.Drawing.Size(170, 23);
             this.cbOperation.TabIndex = 0;
             this.cbOperation.SelectedIndexChanged += new System.EventHandler(this.cbOperation_SelectedIndexChanged);
             // 
@@ -372,7 +295,7 @@
             this.btnStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnStart.Location = new System.Drawing.Point(3, 32);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(96, 23);
+            this.btnStart.Size = new System.Drawing.Size(80, 23);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -382,7 +305,7 @@
             // 
             this.cbAuto.AutoSize = true;
             this.tableLayoutPanel4.SetColumnSpan(this.cbAuto, 2);
-            this.cbAuto.Location = new System.Drawing.Point(105, 32);
+            this.cbAuto.Location = new System.Drawing.Point(89, 32);
             this.cbAuto.Name = "cbAuto";
             this.cbAuto.Size = new System.Drawing.Size(52, 19);
             this.cbAuto.TabIndex = 2;
@@ -396,7 +319,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 29);
+            this.label3.Size = new System.Drawing.Size(80, 29);
             this.label3.TabIndex = 3;
             this.label3.Text = "Operation ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -411,20 +334,21 @@
             this.tabControl1.Controls.Add(this.pageSelectByRegex);
             this.tabControl1.Controls.Add(this.pageSelectByPrefixSuffix);
             this.tabControl1.Controls.Add(this.pageTextRepeatLoop);
+            this.tabControl1.Controls.Add(this.pageAdvancedReplace);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(3, 61);
             this.tabControl1.Name = "tabControl1";
             this.tableLayoutPanel4.SetRowSpan(this.tabControl1, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(300, 260);
+            this.tabControl1.Size = new System.Drawing.Size(256, 260);
             this.tabControl1.TabIndex = 4;
             // 
             // pageBlank
             // 
             this.pageBlank.Location = new System.Drawing.Point(4, 24);
             this.pageBlank.Name = "pageBlank";
-            this.pageBlank.Size = new System.Drawing.Size(292, 232);
+            this.pageBlank.Size = new System.Drawing.Size(248, 232);
             this.pageBlank.TabIndex = 2;
             this.pageBlank.Text = "blank";
             this.pageBlank.UseVisualStyleBackColor = true;
@@ -435,7 +359,7 @@
             this.pageReplace.Location = new System.Drawing.Point(4, 24);
             this.pageReplace.Name = "pageReplace";
             this.pageReplace.Padding = new System.Windows.Forms.Padding(3);
-            this.pageReplace.Size = new System.Drawing.Size(292, 232);
+            this.pageReplace.Size = new System.Drawing.Size(287, 228);
             this.pageReplace.TabIndex = 0;
             this.pageReplace.Text = "Replace";
             this.pageReplace.UseVisualStyleBackColor = true;
@@ -467,7 +391,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(281, 222);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // label4
@@ -598,7 +522,7 @@
             this.pageSplit.Location = new System.Drawing.Point(4, 24);
             this.pageSplit.Name = "pageSplit";
             this.pageSplit.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSplit.Size = new System.Drawing.Size(292, 232);
+            this.pageSplit.Size = new System.Drawing.Size(287, 228);
             this.pageSplit.TabIndex = 1;
             this.pageSplit.Text = "Split";
             this.pageSplit.UseVisualStyleBackColor = true;
@@ -625,7 +549,7 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(281, 222);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label7
@@ -711,7 +635,7 @@
             this.pageAddPrefixSuffix.Controls.Add(this.tableLayoutPanel7);
             this.pageAddPrefixSuffix.Location = new System.Drawing.Point(4, 24);
             this.pageAddPrefixSuffix.Name = "pageAddPrefixSuffix";
-            this.pageAddPrefixSuffix.Size = new System.Drawing.Size(292, 232);
+            this.pageAddPrefixSuffix.Size = new System.Drawing.Size(287, 228);
             this.pageAddPrefixSuffix.TabIndex = 3;
             this.pageAddPrefixSuffix.Text = "AddPrefixSuffix";
             this.pageAddPrefixSuffix.UseVisualStyleBackColor = true;
@@ -734,7 +658,7 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(292, 232);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(287, 228);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label11
@@ -781,7 +705,7 @@
             this.pageSelectByRegex.Location = new System.Drawing.Point(4, 24);
             this.pageSelectByRegex.Name = "pageSelectByRegex";
             this.pageSelectByRegex.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSelectByRegex.Size = new System.Drawing.Size(292, 232);
+            this.pageSelectByRegex.Size = new System.Drawing.Size(287, 228);
             this.pageSelectByRegex.TabIndex = 4;
             this.pageSelectByRegex.Text = "SelectByRegex";
             this.pageSelectByRegex.UseVisualStyleBackColor = true;
@@ -802,7 +726,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(281, 222);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // label13
@@ -830,7 +754,7 @@
             this.pageSelectByPrefixSuffix.Location = new System.Drawing.Point(4, 24);
             this.pageSelectByPrefixSuffix.Name = "pageSelectByPrefixSuffix";
             this.pageSelectByPrefixSuffix.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSelectByPrefixSuffix.Size = new System.Drawing.Size(292, 232);
+            this.pageSelectByPrefixSuffix.Size = new System.Drawing.Size(287, 228);
             this.pageSelectByPrefixSuffix.TabIndex = 5;
             this.pageSelectByPrefixSuffix.Text = "Select";
             this.pageSelectByPrefixSuffix.UseVisualStyleBackColor = true;
@@ -853,7 +777,7 @@
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(286, 226);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(281, 222);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // label14
@@ -900,7 +824,7 @@
             this.pageTextRepeatLoop.Location = new System.Drawing.Point(4, 24);
             this.pageTextRepeatLoop.Name = "pageTextRepeatLoop";
             this.pageTextRepeatLoop.Padding = new System.Windows.Forms.Padding(3);
-            this.pageTextRepeatLoop.Size = new System.Drawing.Size(292, 232);
+            this.pageTextRepeatLoop.Size = new System.Drawing.Size(287, 228);
             this.pageTextRepeatLoop.TabIndex = 6;
             this.pageTextRepeatLoop.Text = "Text Repeat";
             this.pageTextRepeatLoop.UseVisualStyleBackColor = true;
@@ -923,7 +847,7 @@
             this.dgvTextRepeatLoop.Location = new System.Drawing.Point(3, 3);
             this.dgvTextRepeatLoop.Name = "dgvTextRepeatLoop";
             this.dgvTextRepeatLoop.RowTemplate.Height = 25;
-            this.dgvTextRepeatLoop.Size = new System.Drawing.Size(286, 226);
+            this.dgvTextRepeatLoop.Size = new System.Drawing.Size(281, 222);
             this.dgvTextRepeatLoop.TabIndex = 0;
             // 
             // dgvcID
@@ -975,6 +899,100 @@
             this.dgvcFormatString.Name = "dgvcFormatString";
             this.dgvcFormatString.Width = 70;
             // 
+            // pageAdvancedReplace
+            // 
+            this.pageAdvancedReplace.Controls.Add(this.tableLayoutPanel10);
+            this.pageAdvancedReplace.Location = new System.Drawing.Point(4, 24);
+            this.pageAdvancedReplace.Name = "pageAdvancedReplace";
+            this.pageAdvancedReplace.Padding = new System.Windows.Forms.Padding(3);
+            this.pageAdvancedReplace.Size = new System.Drawing.Size(287, 228);
+            this.pageAdvancedReplace.TabIndex = 7;
+            this.pageAdvancedReplace.Text = "AdvancedReplace";
+            this.pageAdvancedReplace.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 2;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel10.Controls.Add(this.label18, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.tbxPARSelectedKeyword, 1, 2);
+            this.tableLayoutPanel10.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tbxPARFindWhat, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tbxPARReplaceWith, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.label17, 0, 1);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 7;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(281, 222);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Location = new System.Drawing.Point(3, 58);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 29);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Selected Keyword";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxPARSelectedKeyword
+            // 
+            this.tbxPARSelectedKeyword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPARSelectedKeyword.Location = new System.Drawing.Point(109, 61);
+            this.tbxPARSelectedKeyword.Name = "tbxPARSelectedKeyword";
+            this.tbxPARSelectedKeyword.Size = new System.Drawing.Size(198, 23);
+            this.tbxPARSelectedKeyword.TabIndex = 4;
+            this.tbxPARSelectedKeyword.Text = "%v%";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(100, 29);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Find What";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tbxPARFindWhat
+            // 
+            this.tbxPARFindWhat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPARFindWhat.Location = new System.Drawing.Point(109, 3);
+            this.tbxPARFindWhat.Name = "tbxPARFindWhat";
+            this.tbxPARFindWhat.Size = new System.Drawing.Size(198, 23);
+            this.tbxPARFindWhat.TabIndex = 1;
+            // 
+            // tbxPARReplaceWith
+            // 
+            this.tbxPARReplaceWith.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbxPARReplaceWith.Location = new System.Drawing.Point(109, 32);
+            this.tbxPARReplaceWith.Name = "tbxPARReplaceWith";
+            this.tbxPARReplaceWith.Size = new System.Drawing.Size(198, 23);
+            this.tbxPARReplaceWith.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Location = new System.Drawing.Point(3, 29);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 29);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Replace With";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 4;
@@ -993,7 +1011,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.950617F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.04939F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(195, 324);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(208, 324);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tbxOutput
@@ -1004,22 +1022,24 @@
             this.tbxOutput.MaxLength = 999999999;
             this.tbxOutput.Multiline = true;
             this.tbxOutput.Name = "tbxOutput";
-            this.tbxOutput.Size = new System.Drawing.Size(189, 290);
+            this.tbxOutput.Size = new System.Drawing.Size(202, 290);
             this.tbxOutput.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.Size = new System.Drawing.Size(87, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Output";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnOutputToInput
             // 
             this.btnOutputToInput.AutoSize = true;
-            this.btnOutputToInput.Location = new System.Drawing.Point(164, 3);
+            this.btnOutputToInput.Location = new System.Drawing.Point(177, 3);
             this.btnOutputToInput.Name = "btnOutputToInput";
             this.btnOutputToInput.Size = new System.Drawing.Size(28, 22);
             this.btnOutputToInput.TabIndex = 3;
@@ -1031,7 +1051,7 @@
             // btnOutputClear
             // 
             this.btnOutputClear.AutoSize = true;
-            this.btnOutputClear.Location = new System.Drawing.Point(133, 3);
+            this.btnOutputClear.Location = new System.Drawing.Point(146, 3);
             this.btnOutputClear.Name = "btnOutputClear";
             this.btnOutputClear.Size = new System.Drawing.Size(25, 22);
             this.btnOutputClear.TabIndex = 4;
@@ -1042,7 +1062,7 @@
             // 
             // btnOutputCopy
             // 
-            this.btnOutputCopy.Location = new System.Drawing.Point(83, 3);
+            this.btnOutputCopy.Location = new System.Drawing.Point(96, 3);
             this.btnOutputCopy.Name = "btnOutputCopy";
             this.btnOutputCopy.Size = new System.Drawing.Size(44, 22);
             this.btnOutputCopy.TabIndex = 5;
@@ -1055,6 +1075,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -1064,6 +1085,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(710, 449);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(3, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(704, 41);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Text Tools";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -1104,9 +1137,13 @@
             this.tableLayoutPanel9.PerformLayout();
             this.pageTextRepeatLoop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTextRepeatLoop)).EndInit();
+            this.pageAdvancedReplace.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1185,5 +1222,14 @@
         private DataGridViewTextBoxColumn dgvcStep;
         private DataGridViewTextBoxColumn dgvcRepeat;
         private DataGridViewTextBoxColumn dgvcFormatString;
+        private TabPage pageAdvancedReplace;
+        private TableLayoutPanel tableLayoutPanel10;
+        private Label label16;
+        private TextBox tbxPARFindWhat;
+        private TextBox tbxPARReplaceWith;
+        private Label label17;
+        private Label label18;
+        private TextBox tbxPARSelectedKeyword;
+        private Label label19;
     }
 }
