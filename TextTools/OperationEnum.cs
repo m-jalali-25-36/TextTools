@@ -11,6 +11,8 @@ namespace TextTools
         AddLineNumbers,
         AddPrefixSuffixIntoEachLine,
         ApplyControlCharacter,
+        Base64Decode,
+        Base64Encode,
         ConvertToAsciiCodeNumber,
         CountCharacters, // -----
         CountLines, // -----
@@ -20,6 +22,7 @@ namespace TextTools
         InvertCase,
         Lowercase,
         NumbersOperations,
+        NumberGeneration, // -----
         RemoveDuplicateLines, // -----
         RemoveEmptyLines,
         RemoveExtraSpaces,

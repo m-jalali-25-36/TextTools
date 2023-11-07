@@ -120,6 +120,12 @@ namespace TextTools
                 case OperationEnum.AddLineNumbers:
                     addLineNumbersOperation();
                     break;
+                case OperationEnum.Base64Encode:
+                    OutputText = InputText.Base64Encode();
+                    break;
+                case OperationEnum.Base64Decode:
+                    OutputText = InputText.Base64Decode();
+                    break;
                 case OperationEnum.Urlencode:
                     OutputText = HttpUtility.UrlEncode(InputText);
                     break;
