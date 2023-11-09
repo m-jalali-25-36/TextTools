@@ -99,6 +99,9 @@ namespace TextTools
                 case OperationEnum.AddCommasToNumbers:
                     OutputText = InputText.AddCommasToNumbers();
                     break;
+                case OperationEnum.PersianNumbersToEnglish:
+                    OutputText = InputText.PersianNumbersToEnglish();
+                    break;
                 case OperationEnum.ReplaceText:
                     replaceOperation();
                     break;

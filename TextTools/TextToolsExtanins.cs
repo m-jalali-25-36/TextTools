@@ -152,12 +152,12 @@ namespace TextTools
         }
         public static string AddCommasToNumbers(this string text)
         {
-            text= text.AdvancedReplace("^[0-9,]+[./]?[0-9,]*( |\n)",
+            text = text.AdvancedReplace("^[0-9,]+[./]?[0-9,]*( |\n)",
                 "%value%\n",
                 q => string.Format("{0:#,###.#}", double.Parse(q.Replace("/", ".").Replace(",", ""), CultureInfo.InvariantCulture)),
                 regenOption: RegexOptions.Multiline
                 );
-            text= text.AdvancedReplace(" [0-9,]+[./]?[0-9,]* ",
+            text = text.AdvancedReplace(" [0-9,]+[./]?[0-9,]* ",
                 " %value% ",
                 q => string.Format("{0:#,###.#}", double.Parse(q.Replace("/", ".").Replace(",", ""), CultureInfo.InvariantCulture)),
                 regenOption: RegexOptions.Multiline
@@ -191,6 +191,16 @@ namespace TextTools
             {
                 return "";
             }
+        }
+
+        public static string PersianNumbersToEnglish(this string input)
+        {
+            string[] persian = new string[10] { "۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹" };
+
+            for (int j = 0; j < persian.Length; j++)
+                input = input.Replace(persian[j], j.ToString());
+
+            return input;
         }
     }
 }

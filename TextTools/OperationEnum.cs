@@ -25,6 +25,7 @@ namespace TextTools
         Lowercase,
         NumbersOperations,
         NumberGeneration, // -----
+        PersianNumbersToEnglish,
         RemoveDuplicateLines, // -----
         RemoveEmptyLines,
         RemoveExtraSpaces,
