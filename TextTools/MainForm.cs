@@ -60,6 +60,9 @@ namespace TextTools
             OperationEnum s = (OperationEnum)Enum.Parse(typeof(OperationEnum), ((string)cbOperation.SelectedItem).Replace(" ", ""));
             switch (s)
             {
+                case OperationEnum.HexToRgb:
+                    OutputText = ColorTools.MultiHexToColor(InputText);
+                    break;
                 case OperationEnum.Uppercase:
                     OutputText = InputText.ToUpper();
                     break;
@@ -135,10 +138,10 @@ namespace TextTools
                 case OperationEnum.Base64Decode:
                     OutputText = InputText.Base64Decode();
                     break;
-                case OperationEnum.Urlencode:
+                case OperationEnum.UrlEncode:
                     OutputText = HttpUtility.UrlEncode(InputText);
                     break;
-                case OperationEnum.Urldecode:
+                case OperationEnum.UrlDecode:
                     OutputText = HttpUtility.UrlDecode(InputText);
                     break;
                 case OperationEnum.GatheringInALine:

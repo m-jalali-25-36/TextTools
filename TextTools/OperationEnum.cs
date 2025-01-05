@@ -45,8 +45,10 @@ namespace TextTools
         TrimLines,
         TrimLinesEnd,
         TrimLinesStart,
-        Urldecode,
-        Urlencode,
+        UrlDecode,
+        UrlEncode,
         Uppercase,
+        HexToRgb,
+        RgbToHex,
     }
 }
